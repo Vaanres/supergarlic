@@ -8,9 +8,8 @@
 
 
 export default {
-  components: {
-   
-  }
+  name:"Index",
+  
 }
 </script>
 

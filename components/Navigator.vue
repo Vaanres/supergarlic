@@ -15,7 +15,7 @@
                 </b-navbar-nav>
 
                 <!-- Right aligned nav items -->
-                <b-navbar-nav>
+                <b-navbar-nav class="navbar-actions">
                     <button type="button" class="btn btn-outline-light ">
                         <font-awesome-icon icon="phone" flip="horizontal"/> 0898120400
                     </button>
@@ -25,14 +25,13 @@
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-
-
-      
     </div>
     
 </template>
 
 <script>
+//import Hamburger from "../components/Hamburger";
+
 export default {
     name:"Navigator",
     data() {
@@ -48,8 +47,45 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.navbar-toggler {
-  border-color: transparent;
+<style lang="scss" scoped>
+@import '~assets/styles/override';
+
+$navbar-font-size: 1.2rem;
+
+.navbar-dark {
+  .navbar-toggler {
+    border-color: transparentize($color: white, $amount: 1);
+  }
+}
+
+.navbar-nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .nav-link {
+    font-size: $navbar-font-size;
+    text-align: center;
+  }
+
+  //   &.navbar-actions {
+  //     @include media-breakpoint-down(xs) {
+  //       border-top: 1px solid white;
+  //     }
+  //   }
+
+  button {
+    font-size: $navbar-font-size;
+
+    & ~ button {
+      @include media-breakpoint-down(xs) {
+        margin-top: 0.5rem;
+      }
+      @include media-breakpoint-up(md) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
 }
 </style>
+
+
