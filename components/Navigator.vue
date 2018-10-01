@@ -1,49 +1,65 @@
 <template>
-    <div>
-        <b-navbar toggleable="md" type="dark" variant="dark">
-            
-            <b-navbar-brand href="#" class="d-flex">
-                <img class="mr-1" src="~assets/images/logo.svg" alt="Siêu tỏi logo"><b>SiêuTỏi</b>
-            </b-navbar-brand>
-            
-            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-            <b-collapse is-nav id="nav_collapse">
-                <b-navbar-nav class="ml-auto mr-auto">
-                    <b-nav-item href="#">Trang chủ</b-nav-item>
-                    <b-nav-item href="#">Bảng giá</b-nav-item>
-                    <b-nav-item href="#">Về chúng tôi</b-nav-item>
-                </b-navbar-nav>
+  <div>
+    <b-navbar
+      toggleable="md"
+      type="dark"
+      variant="dark">
 
-                <!-- Right aligned nav items -->
-                <b-navbar-nav class="navbar-actions">
-                    <button type="button" class="btn btn-outline-light ">
-                        <font-awesome-icon icon="phone" flip="horizontal"/> 0898120400
-                    </button>
-                    <button type="button" class="btn btn-outline-light">
-                        Đặt mua ngay
-                    </button>
-                </b-navbar-nav>
-            </b-collapse>
-        </b-navbar>
-    </div>
-    
+      <b-navbar-brand
+        href="#"
+        class="d-flex">
+        <img
+          class="mr-1"
+          src="~assets/images/logo.svg"
+          alt="Siêu tỏi logo"><b>SiêuTỏi</b>
+      </b-navbar-brand>
+
+      <b-navbar-toggle target="nav_collapse"/>
+      <b-collapse
+        id="nav_collapse"
+        is-nav>
+        <b-navbar-nav class="ml-auto mr-auto">
+          <b-nav-item href="#">Trang chủ</b-nav-item>
+          <b-nav-item href="#">Bảng giá</b-nav-item>
+          <b-nav-item href="#">Về chúng tôi</b-nav-item>
+        </b-navbar-nav>
+
+        <!-- Right aligned nav items -->
+        <b-navbar-nav class="navbar-actions">
+          <button
+            type="button"
+            class="btn btn-outline-light ">
+            <font-awesome-icon
+              icon="phone"
+              flip="horizontal"/> 0898120400
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-light">
+            Đặt mua ngay
+          </button>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+  </div>
+
 </template>
 
 <script>
 //import Hamburger from "../components/Hamburger";
 
 export default {
-    name:"Navigator",
-    data() {
-        return {
-            isActive: false
-        };
-    },
-    methods: {
-        toggleMenu() {
-            this.isActive = !this.isActive;
-        }
+  name: 'Navigator',
+  data() {
+    return {
+      isActive: false
     }
+  },
+  methods: {
+    toggleMenu() {
+      this.isActive = !this.isActive
+    }
+  }
 }
 </script>
 
@@ -59,8 +75,10 @@ $navbar-font-size: 1.2rem;
 }
 
 .navbar-nav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  @include media-breakpoint-down(xs) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
   .nav-link {
     font-size: $navbar-font-size;
@@ -87,5 +105,3 @@ $navbar-font-size: 1.2rem;
   }
 }
 </style>
-
-

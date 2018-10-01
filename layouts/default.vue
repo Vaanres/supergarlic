@@ -4,9 +4,9 @@
       <header class="grid__header">
         <Navigator/>
       </header>
-      <section class="grid__main">
-      
-
+      <section
+        id="main"
+        class="grid__main">
         <nuxt/>
       </section>
       <footer class="grid__footer">
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import Navigator from "../components/Navigator";
-import Footer from "../components/Footer";
+import Navigator from '../components/Navigator'
+import Footer from '../components/Footer'
 
 export default {
-   components: {
+  components: {
     Navigator,
     Footer
   }

@@ -1,28 +1,29 @@
 <template>
   <section>
-    <button class="hamburger hamburger--spin"
-    :class="{'is-active': isActive}" @click="toggleMenu()" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
+    <button 
+      :class="{'is-active': isActive}"
+      class="hamburger hamburger--spin" 
+      type="button" 
+      @click="toggleMenu()">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"/>
+      </span>
     </button>
   </section>
 </template>
 
 <script>
-
 export default {
-  name:"HamburgerButton",
+  name: 'HamburgerButton',
   data() {
     return {
       isActive: false
-    };
+    }
   },
   methods: {
     toggleMenu() {
-      this.isActive = !this.isActive;
+      this.isActive = !this.isActive
     }
   }
 }
 </script>
-

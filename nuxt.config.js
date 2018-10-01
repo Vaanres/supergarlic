@@ -8,7 +8,8 @@ module.exports = {
    */
   head: {
     title: pkg.name,
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -21,11 +22,13 @@ module.exports = {
         content: pkg.description
       }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
 
   /*
@@ -43,7 +46,11 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/vue-lazyload", "~/plugins/font-awesome", "~/plugins/bootstrap-vue"],
+  plugins: [
+    '~/plugins/vue-lazyload',
+    '~/plugins/font-awesome',
+    '~/plugins/bootstrap-vue'
+  ],
 
   /*
    ** Nuxt.js modules
@@ -51,9 +58,12 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    ['bootstrap-vue/nuxt', {
-      css: false
-    }],
+    [
+      'bootstrap-vue/nuxt',
+      {
+        css: false
+      }
+    ]
   ],
   /*
    ** Axios module configuration
@@ -70,13 +80,21 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {
-
-    },
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
   },
   render: {
     bundleRenderer: {
       shouldPreload: (file, type) => {
-        return ["script", "style", "font"].includes(type);
+        return ['script', 'style', 'font'].includes(type)
       }
     }
   }
