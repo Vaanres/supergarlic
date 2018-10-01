@@ -5,6 +5,8 @@
         <Navigator/>
       </header>
       <section class="grid__main">
+      
+
         <nuxt/>
       </section>
       <footer class="grid__footer">

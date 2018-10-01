@@ -43,14 +43,17 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/vue-lazyload", "~/plugins/font-awesome"],
+  plugins: ["~/plugins/vue-lazyload", "~/plugins/font-awesome", "~/plugins/bootstrap-vue"],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['bootstrap-vue/nuxt', {
+      css: false
+    }],
   ],
   /*
    ** Axios module configuration
@@ -69,14 +72,6 @@ module.exports = {
     extend(config, ctx) {
 
     },
-    vendor: [
-      "animate.css",
-      "clipboard",
-      //"jquery",
-      "vue-lazyload",
-      "@fortawesome/vue-fontawesome",
-      "@fortawesome/fontawesome"
-    ]
   },
   render: {
     bundleRenderer: {
