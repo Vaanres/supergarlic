@@ -2,7 +2,7 @@
   <b-navbar
     toggleable="md"
     type="dark"
-    variant="dark">
+    variant="primary">
     <div class="container">
 
       <b-navbar-brand
@@ -115,7 +115,7 @@ export default {
   .nav-item {
     .nav-link {
       @include media-breakpoint-up(md) {
-        padding: 0rem 1rem;
+        padding: 0rem 0.5rem;
         border-top: 3px solid transparentize($color: white, $amount: 1);
 
         &.active,

@@ -1,10 +1,10 @@
 <template>
   <div class="container pt-3 pb-3">
-    <div class="row no-gutters justify-content-between">
-      <div>
-        © 2018 Tỏi Phan Rang
+    <div class="d-flex flex-row justify-content-between">
+      <div class="d-flex align-self-center">
+        <span>© 2018 Tỏi Phan Rang</span>
       </div>
-      <div class="justify-content-end">
+      <div class="d-flex align-self-center">
         <a 
           class="social-link fb"
           href="#">
@@ -37,10 +37,12 @@ export default {
 @import '~assets/styles/override';
 footer {
   border-top: 1px solid $gray-200;
-  //background-color: $gray-100;
+
   .container {
     .social-link {
       color: $gray-600;
+      font-size: 1.4rem;
+
       &.fb {
         &:hover,
         &:focus {
