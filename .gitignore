@@ -81,4 +81,5 @@ dist
 # IDE
 .idea
 .firebase/hosting.ZGlzdA.cache
+.firebase/*
 
