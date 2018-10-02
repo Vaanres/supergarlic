@@ -17,9 +17,6 @@ export default {
     return {
       vIndex: 1
     }
-  },
-  transition(to, from) {
-    return 'slide-right'
   }
 }
 </script>

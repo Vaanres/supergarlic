@@ -12,9 +12,6 @@ export default {
       default: 1,
       type: Number
     }
-  },
-  transition(to, from) {
-    return 'slide-right'
   }
 }
 </script>
