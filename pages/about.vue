@@ -1,15 +1,15 @@
 <template>
   <section>
-    <h1>Index</h1>
+    <h1>About</h1>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'About',
   props: {
     index: {
-      default: 1,
+      default: 3,
       type: Number
     }
   },
@@ -22,6 +22,6 @@ export default {
 <style lang="scss" scoped>
 section {
   height: 100vh;
-  background: #673ab7;
+  background: #3f51b5;
 }
 </style>

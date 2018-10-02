@@ -1,19 +1,26 @@
 <template>
   <section>
-    <h1>Index</h1>
+    <h1>Pricing</h1>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'Pricing',
   props: {
     index: {
-      default: 1,
+      default: 2,
       type: Number
     }
   },
+  data() {
+    return {
+      vIndex: 1
+    }
+  },
   transition(to, from) {
+    console.log(to)
+
     return 'slide-right'
   }
 }
@@ -22,6 +29,6 @@ export default {
 <style lang="scss" scoped>
 section {
   height: 100vh;
-  background: #673ab7;
+  background: #2196f3;
 }
 </style>

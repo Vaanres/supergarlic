@@ -4,9 +4,7 @@
       <header class="grid__header">
         <Navigator/>
       </header>
-      <section
-        id="main"
-        class="grid__main">
+      <section class="grid__main">
         <nuxt/>
       </section>
       <footer class="grid__footer">

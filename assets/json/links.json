@@ -1,0 +1,18 @@
+{
+  "links": [{
+      "id": 1,
+      "name": "Trang chủ",
+      "path": "/"
+    },
+    {
+      "id": 2,
+      "name": "Bảng giá",
+      "path": "pricing"
+    },
+    {
+      "id": 3,
+      "name": "Về chúng tôi",
+      "path": "about"
+    }
+  ]
+}

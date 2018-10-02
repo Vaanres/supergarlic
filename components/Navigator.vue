@@ -18,24 +18,30 @@
       <b-collapse
         id="nav_collapse"
         is-nav>
-        <b-navbar-nav class="ml-auto mr-auto">
-          <b-nav-item href="#">Trang chủ</b-nav-item>
-          <b-nav-item href="#">Bảng giá</b-nav-item>
-          <b-nav-item href="#">Về chúng tôi</b-nav-item>
+        <b-navbar-nav class=" mr-auto">
+          <b-nav-item 
+            v-for="(item, index) in links"
+            :key="index"
+            :to="item.path" 
+            class="nav-link"
+            active-class="active"
+            exact>  
+            {{ item.name }}
+          </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="navbar-actions">
-          <button
-            type="button"
-            class="btn btn-outline-light ">
+          <a 
+            class="btn btn-navbar btn-call" 
+            href="tel:0898120400" >
             <font-awesome-icon
               icon="phone"
-              flip="horizontal"/> 0898120400
-          </button>
+              fixed-width/> 0898 120 400
+          </a>
           <button
             type="button"
-            class="btn btn-outline-light">
+            class="btn btn-outline-light btn-navbar">
             Đặt mua ngay
           </button>
         </b-navbar-nav>
@@ -52,7 +58,21 @@ export default {
   name: 'Navigator',
   data() {
     return {
-      isActive: false
+      isActive: false,
+      links: [
+        {
+          name: 'Trang chủ',
+          path: '/'
+        },
+        {
+          name: 'Bảng giá',
+          path: 'pricing'
+        },
+        {
+          name: 'Về chúng tôi',
+          path: 'about'
+        }
+      ]
     }
   },
   methods: {
@@ -66,7 +86,24 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/styles/override';
 
-$navbar-font-size: 1.2rem;
+@keyframes vibration {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+:root {
+  --navbar-font-size: 1rem;
+}
 
 .navbar-dark {
   .navbar-toggler {
@@ -78,11 +115,40 @@ $navbar-font-size: 1.2rem;
   @include media-breakpoint-down(xs) {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    --navbar-font-size: 1.2rem;
   }
 
-  .nav-link {
-    font-size: $navbar-font-size;
-    text-align: center;
+  .nav-item {
+    .nav-link {
+      @include media-breakpoint-up(md) {
+        padding: 0rem 1rem;
+        border-top: 3px solid transparentize($color: white, $amount: 1);
+
+        &.active,
+        &:hover {
+          &:after {
+            width: 100%;
+            background: white;
+          }
+        }
+
+        &:after {
+          position: relative;
+          top: 1rem;
+          content: '';
+          display: block;
+          width: 0.5rem;
+          height: 3px;
+          border-radius: 3px 3px 0 0;
+          background: transparentize($color: white, $amount: 1);
+          transition: all 0.2s ease-in-out;
+          margin: 0 auto;
+        }
+      }
+
+      font-size: var(--navbar-font-size);
+      text-align: center;
+    }
   }
 
   //   &.navbar-actions {
@@ -91,15 +157,33 @@ $navbar-font-size: 1.2rem;
   //     }
   //   }
 
-  button {
-    font-size: $navbar-font-size;
+  .btn-navbar {
+    font-size: var(--navbar-font-size);
 
-    & ~ button {
+    & ~ .btn-navbar {
       @include media-breakpoint-down(xs) {
         margin-top: 0.5rem;
       }
+
       @include media-breakpoint-up(md) {
         margin-left: 0.5rem;
+      }
+    }
+
+    &.btn-call {
+      color: white;
+      &:hover {
+        background: transparentize($color: white, $amount: 0.9);
+      }
+    }
+
+    svg {
+      width: 1rem;
+    }
+
+    &:hover {
+      svg {
+        animation: vibration 0.5s ease-in-out infinite;
       }
     }
   }
