@@ -147,7 +147,7 @@ export default {
 
   &.navbar-actions {
     @include media-breakpoint-down(xs) {
-      border-top: 1px solid transparentize($color: white, $amount: 0.5);
+      border-top: 1px solid transparentize($color: white, $amount: 0.8);
     }
   }
 
