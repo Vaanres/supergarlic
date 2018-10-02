@@ -19,8 +19,6 @@ export default {
     }
   },
   transition(to, from) {
-    console.log(to)
-
     return 'slide-right'
   }
 }
