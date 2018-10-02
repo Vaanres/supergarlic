@@ -41,7 +41,7 @@
           </a>
           <button
             type="button"
-            class="btn btn-outline-light btn-navbar">
+            class="btn btn-outline-light outline-primary btn-navbar">
             Đặt mua ngay
           </button>
         </b-navbar-nav>

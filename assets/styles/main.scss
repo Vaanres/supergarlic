@@ -27,4 +27,14 @@ button {
 }
 
 
-button {}
+button {
+  &.btn {
+    font-weight: bold;
+
+    &.outline-primary {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
