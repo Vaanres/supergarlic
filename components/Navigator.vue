@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <b-navbar
-      toggleable="md"
-      type="dark"
-      variant="dark">
+  <b-navbar
+    toggleable="md"
+    type="dark"
+    variant="dark">
+    <div class="container">
 
       <b-navbar-brand
         href="#"
@@ -46,9 +46,9 @@
           </button>
         </b-navbar-nav>
       </b-collapse>
-    </b-navbar>
-  </div>
-
+    </div>
+      
+  </b-navbar>
 </template>
 
 <script>
@@ -56,23 +56,17 @@
 
 export default {
   name: 'Navigator',
+  props: {
+    links: {
+      type: Array,
+      default() {
+        return []
+      }
+    }
+  },
   data() {
     return {
-      isActive: false,
-      links: [
-        {
-          name: 'Trang chủ',
-          path: '/'
-        },
-        {
-          name: 'Bảng giá',
-          path: 'pricing'
-        },
-        {
-          name: 'Về chúng tôi',
-          path: 'about'
-        }
-      ]
+      isActive: false
     }
   },
   methods: {
@@ -151,11 +145,11 @@ export default {
     }
   }
 
-  //   &.navbar-actions {
-  //     @include media-breakpoint-down(xs) {
-  //       border-top: 1px solid white;
-  //     }
-  //   }
+  &.navbar-actions {
+    @include media-breakpoint-down(xs) {
+      border-top: 1px solid transparentize($color: white, $amount: 0.5);
+    }
+  }
 
   .btn-navbar {
     font-size: var(--navbar-font-size);

@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="grid">
       <header class="grid__header">
-        <Navigator/>
+        <Navigator :links="links"/>
       </header>
       <section class="grid__main">
         <nuxt/>
@@ -22,6 +22,28 @@ export default {
   components: {
     Navigator,
     Footer
+  },
+  data() {
+    return {
+      isActive: false,
+      links: [
+        {
+          id: 1,
+          name: 'Trang chủ',
+          path: '/'
+        },
+        {
+          id: 2,
+          name: 'Bảng giá',
+          path: 'pricing'
+        },
+        {
+          id: 3,
+          name: 'Về chúng tôi',
+          path: 'about'
+        }
+      ]
+    }
   }
 }
 </script>

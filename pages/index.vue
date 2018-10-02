@@ -17,8 +17,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-section {
-  height: 100vh;
-  background: #673ab7;
-}
 </style>

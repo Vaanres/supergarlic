@@ -26,13 +26,11 @@ button {
   }
 }
 
-
 .slide-left {
 
   &-leave-active,
   &-enter-active {
     opacity: 1;
-
   }
 
   &-leave-active {
@@ -63,7 +61,6 @@ button {
 
   &-leave-active {
     transition: all 0.25s linear;
-
   }
 
   &-enter-active {
