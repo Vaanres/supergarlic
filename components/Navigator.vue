@@ -44,7 +44,7 @@
           </a>
           <button
             type="button"
-            class="btn btn-warning btn-navbar">
+            class="btn btn-primary btn-navbar">
             Đặt mua ngay
           </button>
         </b-navbar-nav>
