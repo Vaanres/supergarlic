@@ -6,14 +6,19 @@
         <h1 class="headline mb-3">Tỏi Phan Rang</h1>
         <p class="description ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
 
-        <button
-          type="button"
-          class="btn btn-primary btn-lg btn-hero mt-3">
-          Đặt mua ngay
-        </button>
+        <div class="row">
+          <div class="col-12 col-md-8 col-lg-6">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block btn-hero mt-3">
+              Đặt mua ngay
+            </button>
+          </div>
+        </div>
+
       </div>
       <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
-        <div class="d-flex img-wrapper  align-items-center justify-content-center">
+        <div class="d-flex img-wrapper align-items-center justify-content-center">
           <div class="d-flex align-items-stretch img-wrapper__inner"/>
           <img 
             v-lazy="imgObj"
@@ -105,7 +110,7 @@ export default {
         &__inner {
           border-radius: 1000px;
           position: absolute;
-          animation: image-wrapper-inner 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5)
+          animation: image-wrapper-inner 1s cubic-bezier(0.5, -0.5, 0.5, 1.5)
             0.15s 1 alternate forwards;
           z-index: -1;
           transition: all 0.3s ease-in-out;
