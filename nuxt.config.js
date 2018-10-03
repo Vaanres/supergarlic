@@ -27,9 +27,7 @@ module.exports = {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese'
-      }
-    ],
-    link: [
+      },
       {
         rel: 'icon',
         type: 'image/x-icon',
