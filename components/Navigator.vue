@@ -122,9 +122,7 @@ export default {
 
 .navbar-nav {
   @include media-breakpoint-down(xs) {
-    --navbar-font-size: 1.2rem;
-
-    padding-bottom: 1rem;
+    --navbar-font-size: 1.3rem;
   }
 
   .nav-item {
