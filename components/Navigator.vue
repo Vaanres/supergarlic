@@ -1,20 +1,22 @@
 <template>
   <b-navbar
     toggleable="md"
-    type="dark"
-    variant="primary">
+    variant="faded" 
+    type="light"
+  >
     <div class="container">
-
       <b-navbar-brand
         href="#"
-        class="d-flex">
+        class="d-flex align-items-center">
         <img
           class="mr-1"
-          src="~assets/images/logo.svg"
+          src="~assets/images/logo_dark.svg"
           alt="Siêu tỏi logo"><b>SiêuTỏi</b>
       </b-navbar-brand>
 
-      <b-navbar-toggle target="nav_collapse"/>
+      <b-navbar-toggle 
+        class="pr-0" 
+        target="nav_collapse"/>
       <b-collapse
         id="nav_collapse"
         is-nav>
@@ -33,15 +35,16 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="navbar-actions">
           <a 
-            class="btn btn-navbar btn-call" 
+            class="btn btn-navbar btn-light"
             href="tel:0898120400" >
+            <!-- btn-navbar btn-call -->
             <font-awesome-icon
               icon="phone"
               fixed-width/> 0898 120 400
           </a>
           <button
             type="button"
-            class="btn btn-outline-light outline-primary btn-navbar">
+            class="btn btn-warning btn-navbar">
             Đặt mua ngay
           </button>
         </b-navbar-nav>
@@ -99,17 +102,29 @@ export default {
   --navbar-font-size: 1rem;
 }
 
-.navbar-dark {
+.navbar {
+  background: white;
+  border-bottom: 1px solid $gray-200;
+  &-brand {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.navbar-light {
   .navbar-toggler {
+    outline: none;
     border-color: transparentize($color: white, $amount: 1);
   }
 }
 
 .navbar-nav {
   @include media-breakpoint-down(xs) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     --navbar-font-size: 1.2rem;
+
+    padding-bottom: 1rem;
   }
 
   .nav-item {
@@ -122,7 +137,7 @@ export default {
         &:hover {
           &:after {
             width: 100%;
-            background: white;
+            background: $gray-800;
           }
         }
 
@@ -145,17 +160,17 @@ export default {
     }
   }
 
-  &.navbar-actions {
-    @include media-breakpoint-down(xs) {
-      border-top: 1px solid transparentize($color: white, $amount: 0.8);
-    }
-  }
+  // &.navbar-actions {
+  //   @include media-breakpoint-down(xs) {
+  //     border-top: 1px solid $gray-100;
+  //   }
+  // }
 
   .btn-navbar {
     font-size: var(--navbar-font-size);
 
     & ~ .btn-navbar {
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(md) {
         margin-top: 0.5rem;
       }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-3 pb-3">
+  <div class="container p-3">
     <div class="d-flex flex-row justify-content-between">
       <div class="d-flex align-self-center">
         <span>© 2018 SiêuTỏi</span>
