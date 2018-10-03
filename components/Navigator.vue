@@ -1,6 +1,4 @@
 <template>
-  
-              
   <b-navbar
     toggleable="md" 
     variant="faded"

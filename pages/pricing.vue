@@ -6,18 +6,7 @@
 
 <script>
 export default {
-  name: 'Pricing',
-  props: {
-    index: {
-      default: 2,
-      type: Number
-    }
-  },
-  data() {
-    return {
-      vIndex: 1
-    }
-  }
+  name: 'Pricing'
 }
 </script>
 

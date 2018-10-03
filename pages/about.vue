@@ -6,13 +6,7 @@
 
 <script>
 export default {
-  name: 'About',
-  props: {
-    index: {
-      default: 3,
-      type: Number
-    }
-  }
+  name: 'About'
 }
 </script>
 

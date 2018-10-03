@@ -4,11 +4,12 @@ import VueLazyload from 'vue-lazyload'
 
 Vue.use(VueLazyload, {
   observer: true,
-
   observerOptions: {
     rootMargin: '0px',
     threshold: 0.1
   },
   preLoad: 2,
-  attempt: 3
+  attempt: 3,
+  error: '/images/lazyload/error.svg',
+  loading: '/images/lazyload/loading.svg'
 })
