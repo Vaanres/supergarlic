@@ -2,7 +2,8 @@
 @import "./customized_bootstrap";
 @import "./mixins";
 @import "./functions";
-@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+//@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+
 
 html {
   overflow-x: hidden;
@@ -17,7 +18,7 @@ button {
 
   &-enter-active,
   &-leave-active {
-    transition: all 0.3s ease;
+    transition: all 0.25s ease-in-out;
   }
 
   &-enter,

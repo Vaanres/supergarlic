@@ -1,57 +1,64 @@
 <template>
-  <b-navbar
-    toggleable="md"
-    variant="faded" 
-    type="light"
-  >
-    <div class="container">
-      <b-navbar-brand
-        href="#"
-        class="d-flex align-items-center">
-        <img
-          class="mr-1"
-          src="~assets/images/logo_dark.svg"
-          alt="Siêu tỏi logo"><b>SiêuTỏi</b>
-      </b-navbar-brand>
+  <transition 
+    name="custom-classes-transition"
+    enter-active-class="animated fadeInDown">
+              
+    <b-navbar
+      v-if="isShow"
+      toggleable="md" 
+      variant="faded"
+      type="light"
+    >
+      <div class="container">
+        <b-navbar-brand
+          href="#"
+          class="d-flex align-items-center">
+          <img
+            class="mr-1"
+            src="~assets/images/logo_dark.svg"
+            alt="Siêu tỏi logo"><b>SiêuTỏi</b>
+        </b-navbar-brand>
 
-      <b-navbar-toggle 
-        class="pr-0" 
-        target="nav_collapse"/>
-      <b-collapse
-        id="nav_collapse"
-        is-nav>
-        <b-navbar-nav class=" mr-auto">
-          <b-nav-item 
-            v-for="(item, index) in links"
-            :key="index"
-            :to="item.path" 
-            class="nav-link"
-            active-class="active"
-            exact>  
-            {{ item.name }}
-          </b-nav-item>
-        </b-navbar-nav>
+        <b-navbar-toggle 
+          class="pr-0" 
+          target="nav_collapse"/>
+        <b-collapse
+          id="nav_collapse"
+          is-nav>
+          <b-navbar-nav class=" mr-auto">
+            <b-nav-item 
+              v-for="(item, index) in links"
+              :key="index"
+              :to="item.path" 
+              class="nav-link"
+              active-class="active"
+              exact>  
+              {{ item.name }}
+            </b-nav-item>
+          </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="navbar-actions">
-          <a 
-            class="btn btn-navbar btn-light"
-            href="tel:0898120400" >
-            <!-- btn-navbar btn-call -->
-            <font-awesome-icon
-              icon="phone"
-              fixed-width/> 0898 120 400
-          </a>
-          <button
-            type="button"
-            class="btn btn-primary btn-navbar">
-            Đặt mua ngay
-          </button>
-        </b-navbar-nav>
-      </b-collapse>
-    </div>
+          <!-- Right aligned nav items -->
+          <b-navbar-nav class="navbar-actions">
+            <a 
+              class="btn btn-navbar btn-light"
+              href="tel:0898120400" >
+              <!-- btn-navbar btn-call -->
+              <font-awesome-icon
+                icon="phone"
+                fixed-width/> 0898 120 400
+            </a>
+            <button
+              type="button"
+              class="btn btn-primary btn-navbar">
+              Đặt mua ngay
+            </button>
+          </b-navbar-nav>
+        </b-collapse>
+      </div>
       
-  </b-navbar>
+    </b-navbar>
+  </transition>
+  
 </template>
 
 <script>
@@ -69,8 +76,12 @@ export default {
   },
   data() {
     return {
+      isShow: false,
       isActive: false
     }
+  },
+  mounted() {
+    this.isShow = true
   },
   methods: {
     toggleMenu() {
@@ -128,14 +139,24 @@ export default {
 
   .nav-item {
     .nav-link {
+      &.active {
+        color: $primary;
+      }
+
       @include media-breakpoint-up(md) {
         padding: 0rem 0.5rem;
         border-top: 3px solid transparentize($color: white, $amount: 1);
 
-        &.active,
-        &:hover {
+        &.active {
           &:after {
             width: 100%;
+            background: $primary;
+          }
+        }
+
+        &:hover:not(.active) {
+          &:after {
+            width: 2rem;
             background: $gray-800;
           }
         }
@@ -149,7 +170,8 @@ export default {
           height: 3px;
           border-radius: 3px 3px 0 0;
           background: transparentize($color: white, $amount: 1);
-          transition: all 0.2s ease-in-out;
+          transition: all 0.15s cubic-bezier(0.5, -0.5, 0.5, 1.5);
+
           margin: 0 auto;
         }
       }
