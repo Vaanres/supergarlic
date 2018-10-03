@@ -96,9 +96,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-    optimizeCSS: true,
-    extractCSS: true
+    }
   },
   render: {
     bundleRenderer: {
