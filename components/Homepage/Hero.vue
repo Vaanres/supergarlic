@@ -21,11 +21,11 @@
         <div class="d-flex img-wrapper align-items-center justify-content-center">
           <div class="d-flex align-items-stretch img-wrapper__inner"/>
           <img
-            src="/images/garlics/garlic.png"
+            v-lazy="imgObj"
             class="img-fluid hero-img"
             alt="Siêu Tỏi Phan Rang"
           >
-          <!-- v-lazy="imgObj" -->
+
         </div>
       </div>
     </div>
