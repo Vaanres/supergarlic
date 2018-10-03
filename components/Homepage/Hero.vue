@@ -1,7 +1,7 @@
 <template>
   <section class="container p-3">
     <div class="row hero align-items-center">
-      <div class="col">
+      <div class="col-12 col-md-6 order-2 order-md-1">
         <p class="sub-headline mb-3">ĐẶC SẢN NINH THUẬN</p>
         <h1 class="headline mb-3">Tỏi Phan Rang</h1>
         <p class="description ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
@@ -12,7 +12,7 @@
           Đặt mua ngay
         </button>
       </div>
-      <div class="col">
+      <div class="col-12 col-md-6 order-1 order-md-2">
         <img 
           v-lazy="imgObj"
           class="img-fluid"
@@ -41,6 +41,8 @@ export default {
 
 .container {
   .hero {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     min-height: 70vh;
     .sub-headline {
       font-weight: bold;
