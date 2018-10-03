@@ -20,7 +20,7 @@
       <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
         <div class="d-flex img-wrapper align-items-center justify-content-center">
           <div class="d-flex align-items-stretch img-wrapper__inner"/>
-          <img 
+          <img
             v-lazy="imgObj"
             class="img-fluid hero-img"
             alt="Siêu Tỏi Phan Rang"
