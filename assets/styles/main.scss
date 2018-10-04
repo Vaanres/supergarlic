@@ -42,10 +42,10 @@ button {
 
 
 .section {
+  padding: 5rem 0;
+
   &__light {
     background: $gray-100;
-
-    &__title {}
 
     &__subtitle {
       color: $secondary;
