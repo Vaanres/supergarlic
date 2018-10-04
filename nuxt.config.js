@@ -24,7 +24,8 @@ module.exports = {
     ],
     link: [
       {
-        rel: 'stylesheet',
+        as: 'style',
+        rel: 'preload',
         href:
           'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese'
       },

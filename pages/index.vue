@@ -1,25 +1,22 @@
 <template>
   <div>
     <Hero/>
+    <WhyGarlic/>
   </div>
 
 </template>
 
 <script>
 import Hero from '../components/Homepage/Hero'
+import WhyGarlic from '../components/Homepage/WhyGarlic'
 
 export default {
   name: 'Index',
   components: {
-    Hero
+    Hero,
+    WhyGarlic
   },
-  data() {
-    return {
-      imgObj: {
-        src: '/images/garlics/garlic.png'
-      }
-    }
-  }
+  data() {}
 }
 </script>
 

@@ -108,11 +108,16 @@ export default {
 .navbar {
   background: white;
   border-bottom: 1px solid $gray-200;
+
   &-brand {
     img {
       width: 30px;
       height: 30px;
     }
+  }
+
+  @include media-breakpoint-down(xs) {
+    background: linear-gradient(to bottom, $gray-100, white);
   }
 }
 
@@ -149,7 +154,7 @@ export default {
         &:hover:not(.active) {
           &:after {
             width: 2rem;
-            background: $gray-800;
+            background: $secondary;
           }
         }
 
