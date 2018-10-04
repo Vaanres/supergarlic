@@ -3,7 +3,7 @@ const imagemin = require('gulp-imagemin')
 
 gulp.task('img-min', function() {
   return gulp
-    .src('./static/images/**/*.{jpg,png,svg}')
+    .src('./images/**/*.{jpg,png,svg}')
     .pipe(
       imagemin([
         imagemin.gifsicle({
@@ -27,5 +27,5 @@ gulp.task('img-min', function() {
         })
       ])
     )
-    .pipe(gulp.dest('./static/images-min/'))
+    .pipe(gulp.dest('./static/images/'))
 })
