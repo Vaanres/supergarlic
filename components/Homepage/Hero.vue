@@ -46,19 +46,20 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/styles/override';
+
 :root {
   --image-wrapper-inner-size: 256px;
 }
 
 @keyframes image-wrapper-inner {
   0% {
-    background: transparentize($color: #dacfcc, $amount: 1);
+    background: transparentize($color: $garlic, $amount: 1);
     width: 100px;
     height: 100px;
   }
 
   100% {
-    background: transparentize($color: #dacfcc, $amount: 0.5);
+    background: transparentize($color: $garlic, $amount: 0.5);
     width: var(--image-wrapper-inner-size);
     height: var(--image-wrapper-inner-size);
   }

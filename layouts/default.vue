@@ -14,6 +14,7 @@
   </div>
 </template>
 
+
 <script>
 import Navigator from '../components/Navigator'
 import Footer from '../components/Footer'

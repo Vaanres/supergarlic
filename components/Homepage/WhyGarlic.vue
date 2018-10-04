@@ -5,17 +5,19 @@
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp 
       lần tỏi thường.</p>
 
-      <div class="col-12">
+      <div class="col-12 why-garlic">
         <div class="grid_g">
           <div class="grid_g__0">
-            <h1>Main</h1>
-            <h1>Main</h1>
-            <h1>Main</h1>
-            <h1>Main</h1>
-            <h1>Main</h1>
-            <h1>Main</h1>
-            <h1>Main</h1>
-            <h1>Main</h1>
+            <div class="img-container">
+              <div class="d-flex img-wrapper align-items-center justify-content-center">
+                <div class="d-flex align-items-stretch img-wrapper__inner"/>
+                <img
+                  v-lazy="imgObj"
+                  class="img-fluid"
+                  alt="Siêu Tỏi Phan Rang">
+              </div>
+            </div>
+           
           </div>
           <div class="grid_g__1"><div>L1</div></div>
           <div class="grid_g__2"><div>L2</div></div>
@@ -45,6 +47,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/styles/override';
+:root {
+  --image-wrapper-inner-size: 256px;
+}
 
 @supports (display: grid) {
   .grid_g {
@@ -87,6 +92,46 @@ export default {
     }
     &__6 {
       grid-area: g6;
+    }
+  }
+}
+
+.why-garlic {
+  margin: 10rem 0 5rem 0;
+
+  @include media-breakpoint-up(md) {
+    --image-wrapper-inner-size: 320px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --image-wrapper-inner-size: 400px;
+  }
+
+  .img-container {
+    .img-wrapper {
+      position: relative;
+
+      &__inner {
+        border-radius: 1000px;
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(
+          $garlic,
+          transparentize($color: $garlic, $amount: 1)
+        );
+
+        transition: all 0.3s ease-in-out;
+      }
+
+      img {
+        width: 70%;
+        z-index: 1;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 5rem;
     }
   }
 }

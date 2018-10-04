@@ -15,8 +15,7 @@ export default {
   components: {
     Hero,
     WhyGarlic
-  },
-  data() {}
+  }
 }
 </script>
 
