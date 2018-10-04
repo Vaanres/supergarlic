@@ -2,7 +2,7 @@
   <section class="section section__light">
     <div class="container">
       <h2 class="section__light__title text-center">Tại sao Tỏi Phan Rang đặc biệt?</h2>
-      <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp 
+      <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
       lần tỏi thường.</p>
 
       <div class="col-12 why-garlic">
@@ -17,7 +17,7 @@
                   alt="Siêu Tỏi Phan Rang">
               </div>
             </div>
-           
+
           </div>
           <div class="grid_g__1"><div>L1</div></div>
           <div class="grid_g__2"><div>L2</div></div>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    
+
   </section>
 </template>
 

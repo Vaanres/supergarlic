@@ -1,6 +1,6 @@
 <template>
   <b-navbar
-    toggleable="md" 
+    toggleable="md"
     variant="faded"
     type="light"
   >
@@ -14,28 +14,29 @@
           alt="Siêu tỏi logo"><b>SiêuTỏi</b>
       </b-navbar-brand>
 
-      <b-navbar-toggle 
-        class="pr-0" 
+      <b-navbar-toggle
+        class="pr-0"
         target="nav_collapse"/>
       <b-collapse
         id="nav_collapse"
         is-nav>
         <b-navbar-nav class=" mr-auto">
-          <b-nav-item 
+          <b-nav-item
             v-for="(item, index) in links"
             :key="index"
-            :to="item.path" 
+            :to="item.path"
             class="nav-link"
             active-class="active"
-            exact>  
+            exact>
             {{ item.name }}
           </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="navbar-actions">
-          <a 
-            class="btn btn-navbar btn-light"
+
+          <a
+            class="btn btn-navbar btn-light d-md-none d-lg-inline-block"
             href="tel:0898120400" >
             <!-- btn-navbar btn-call -->
             <font-awesome-icon
@@ -50,10 +51,10 @@
         </b-navbar-nav>
       </b-collapse>
     </div>
-      
+
   </b-navbar>
 
-  
+
 </template>
 
 <script>

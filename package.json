@@ -13,6 +13,7 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "deploy": "yarn gen && firebase deploy",
+    "combo": "yarn build && yarn gen && firebase deploy",
     "min": "gulp img-min"
   },
   "dependencies": {
