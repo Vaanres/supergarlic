@@ -20,30 +20,17 @@
 
           </div>
           <div class="grid_g__1">
-            <div class="d-inline-block item-detail text-center">
-              <p class="item-detail__title">110</p>
-              <span class="item-detail__description">Calories</span>
-            </div>
+            <why-item/>
           </div>
           <div class="grid_g__2">
-            <div class="d-inline-block item-detail text-center">
-              <p class="item-detail__title">110</p>
-              <span class="item-detail__description">Calories</span>
-            </div>
+            <why-item/>
           </div>
           <div class="grid_g__3">
-            <div class="d-inline-block item-detail text-center">
-              <p class="item-detail__title">110</p>
-              <span class="item-detail__description">Calories</span>
-            </div>
+            <why-item/>
           </div>
           <div class="grid_g__4">
-            <div class="d-inline-block item-detail text-center">
-              <p class="item-detail__title">110</p>
-              <span class="item-detail__description">Calories</span>
-            </div>
+            <why-item/>
           </div>
-          
         </div>
       </div>
     </div>
@@ -52,8 +39,11 @@
 </template>
 
 <script>
+import WhyItem from './WhyItem'
+
 export default {
   name: 'WhyGarlic',
+  components: { WhyItem },
   data() {
     return {
       imgObj: {
@@ -66,6 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~assets/styles/override';
+
 :root {
   --image-wrapper-inner-size: 256px;
 }
@@ -146,16 +137,6 @@ export default {
 
     @include media-breakpoint-down(xs) {
       margin-bottom: 5rem;
-    }
-  }
-
-  .item-detail {
-    color: $garlic-dark;
-
-    &__title {
-      font-size: 3rem;
-      font-weight: 300;
-      margin-bottom: 0px;
     }
   }
 }
