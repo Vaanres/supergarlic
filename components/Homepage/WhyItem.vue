@@ -1,7 +1,7 @@
 <template>
   <div
     :class="itemPosition"
-    class="d-inline-block item-detail pt-4 pb-4">
+    class="d-inline-block item-detail p-4">
 
     <div
       v-if="image"
@@ -26,6 +26,10 @@
 export default {
   name: 'WhyItem',
   props: {
+    id: {
+      type: Number,
+      default: 0
+    },
     image: {
       type: String,
       default: ''

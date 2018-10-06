@@ -7,7 +7,7 @@
 
       <div class="col-12 why-garlic">
         <div class="grid_g">
-          <div class="grid_g__m">
+          <div class="grid_g__item grid_g__m">
             <div class="img-container">
               <div class="d-flex img-wrapper align-items-center justify-content-center">
                 <div class="d-flex align-items-stretch img-wrapper__inner"/>
@@ -21,9 +21,10 @@
           <div
             v-for="(item, index) in items"
             :key="index"
-            :class="getItemIndex(index)">
+            :class="getItemIndex(index)"
+            class="grid_g__item">
             <why-item
-              :id="index"
+              :id="getItemIndex(index)"
               :title="item.title"
               :description="item.description"
               :image="item.image"
@@ -51,26 +52,43 @@ export default {
       },
       items: [
         {
-          title: 'Title Item 1',
-          description: 'This a description 1',
+          title: 'Phòng chống ung thư',
+          description:
+            'Chống lại ung thư dạ dày và đại trực tràng, giảm tỷ lệ các khối u ung thư.',
           image: 'https://via.placeholder.com/64x64',
           position: 'right'
         },
         {
-          title: 'Title Item 2',
-          description: 'This a description 2',
+          title: 'Trị cảm cúm thông thường',
+          description:
+            'Giúp cơ thể chống lại cơn cảm lạnh thông thường, giảm ho và phục hồi sức khỏe nhanh hơn.',
           image: 'https://via.placeholder.com/64x64',
           position: 'right'
         },
         {
-          title: 'Title Item 3',
-          description: 'This a description 3',
+          title: 'Trị mụn trứng cá',
+          description:
+            'Điều trị mụn tự nhiên có hiệu quả cao, ngừa sẹo mụn, các bệnh ngoài da và dị ứng.',
+          image: 'https://via.placeholder.com/64x64',
+          position: 'right'
+        },
+        {
+          title: 'Ổn định huyết áp',
+          description: 'Giúp cơ thể luôn duy trì mức huyết áp ổn định.',
           image: 'https://via.placeholder.com/64x64',
           position: 'left'
         },
         {
-          title: 'Title Item 4',
-          description: 'This a description 4',
+          title: 'Cải thiện hệ xương',
+          description:
+            'Tỏi chứa nhiều chất dinh dưỡng giúp phát triển hệ xương khỏe mạnh, đặc biệt làm chậm quá trình loãng xương ở phụ nữ.',
+          image: 'https://via.placeholder.com/64x64',
+          position: 'left'
+        },
+        {
+          title: 'Ngăn ngừa nguy cơ sinh non',
+          description:
+            'Các hợp chất kháng sinh trong tỏi có khả năng giảm nguy cơ sinh non tự phát.',
           image: 'https://via.placeholder.com/64x64',
           position: 'left'
         }
@@ -104,22 +122,17 @@ export default {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      'g1 m g3'
-      'g2 m g4';
+      'g1 m g4'
+      'g2 m g5'
+      'g3 m g6';
 
-    &__m,
-    &__1,
-    &__2,
-    &__3,
-    &__4 {
-      align-self: center;
-      justify-self: center;
-    }
-
-    // &__1,
-    // &__2 {
-    //   justify-self: end;
+    // &__item {
+    //   justify-self: center;
     // }
+
+    &__m {
+      align-self: center;
+    }
 
     &__m {
       grid-area: m;
