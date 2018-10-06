@@ -21,10 +21,10 @@
           <div
             v-for="(item, index) in items"
             :key="index"
-            :class="getItemIndex(index)"
+            :class="getGridItemIndex(index)"
             class="grid_g__item">
             <why-item
-              :id="getItemIndex(index)"
+              :id="index"
               :title="item.title"
               :description="item.description"
               :image="item.image"
@@ -102,7 +102,7 @@ export default {
   //   }
   // },
   methods: {
-    getItemIndex(id) {
+    getGridItemIndex(id) {
       return `grid_g__${id + 1}`
     }
   }
@@ -153,7 +153,7 @@ export default {
 }
 
 .why-garlic {
-  margin: 10rem 0 5rem 0;
+  margin-top: 5rem;
 
   @include media-breakpoint-up(md) {
     --image-wrapper-inner-size: 320px;

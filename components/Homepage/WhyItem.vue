@@ -4,19 +4,17 @@
     class="d-inline-block item-detail p-4">
 
     <div
-      v-if="image"
-      class="item-detail__img_wrapper d-inline-block p-1 mb-2">
-      <img
-        :src="image"
-        class="img-fluid"
-        alt="holder">
+      class="item-detail__icon d-inline-flex justify-content-center align-items-center p-1 mb-2">
+      <div class="item-detail__icon__number d-inline-block">
+        {{ id }}
+      </div>
     </div>
     <div>
-      <p class="item-detail__title mb-0">
+      <p class="item-detail__title mb-1">
         <b>{{ title }}</b>
       </p>
       <p class="item-detail__description mb-0">
-        <small>{{ description }}</small>
+        {{ description }}
       </p>
     </div>
   </div>
@@ -61,16 +59,25 @@ export default {
 .item-detail {
   color: $garlic-dark;
 
-  &__img_wrapper {
-    border: 1px dashed $garlic;
-    border-radius: 50%;
-    img {
-      border-radius: 50%;
+  &__icon {
+    border: 2px dashed $garlic;
+    border-radius: 10rem;
+    width: 4rem;
+    height: 4rem;
+
+    &__number {
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: bold;
     }
   }
 
   &__title {
     font-size: 1rem;
+  }
+
+  &__description {
+    font-size: 0.8rem;
   }
 }
 </style>
