@@ -7,7 +7,7 @@
 
       <div class="col-12 why-garlic">
         <div class="grid_g">
-          <div class="grid_g__0">
+          <div class="grid_g__m">
             <div class="img-container">
               <div class="d-flex img-wrapper align-items-center justify-content-center">
                 <div class="d-flex align-items-stretch img-wrapper__inner"/>
@@ -17,21 +17,21 @@
                   alt="Siêu Tỏi Phan Rang">
               </div>
             </div>
-
           </div>
-          <div class="grid_g__1">
-            <why-item/>
-          </div>
-          <div class="grid_g__2">
-            <why-item/>
-          </div>
-          <div class="grid_g__3">
-            <why-item/>
-          </div>
-          <div class="grid_g__4">
-            <why-item/>
+          <div
+            v-for="(item, index) in items"
+            :key="index"
+            :class="getItemIndex(index)">
+            <why-item
+              :id="index"
+              :title="item.title"
+              :description="item.description"
+              :image="item.image"
+              :position="item.position"/>
           </div>
         </div>
+
+
       </div>
     </div>
 
@@ -48,7 +48,44 @@ export default {
     return {
       imgObj: {
         src: '/images/garlics/garlic.png'
-      }
+      },
+      items: [
+        {
+          title: 'Title Item 1',
+          description: 'This a description 1',
+          image: 'https://via.placeholder.com/64x64',
+          position: 'right'
+        },
+        {
+          title: 'Title Item 2',
+          description: 'This a description 2',
+          image: 'https://via.placeholder.com/64x64',
+          position: 'right'
+        },
+        {
+          title: 'Title Item 3',
+          description: 'This a description 3',
+          image: 'https://via.placeholder.com/64x64',
+          position: 'left'
+        },
+        {
+          title: 'Title Item 4',
+          description: 'This a description 4',
+          image: 'https://via.placeholder.com/64x64',
+          position: 'left'
+        }
+      ]
+    }
+  },
+  // computed: {
+  //   getItemIndex(number) {
+  //     console.log(number)
+  //     return ''
+  //   }
+  // },
+  methods: {
+    getItemIndex(id) {
+      return `grid_g__${id + 1}`
     }
   }
 }
@@ -70,7 +107,7 @@ export default {
       'g1 m g3'
       'g2 m g4';
 
-    &__0,
+    &__m,
     &__1,
     &__2,
     &__3,
@@ -84,7 +121,7 @@ export default {
     //   justify-self: end;
     // }
 
-    &__0 {
+    &__m {
       grid-area: m;
     }
     &__1 {
