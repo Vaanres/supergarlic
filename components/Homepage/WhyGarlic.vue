@@ -10,11 +10,15 @@
           <div class="grid_g__item grid_g__m">
             <div class="img-container">
               <div class="d-flex img-wrapper align-items-center justify-content-center">
-                <div class="d-flex align-items-stretch img-wrapper__inner"/>
-                <img
-                  v-lazy="imgObj"
-                  class="img-fluid"
-                  alt="Siêu Tỏi Phan Rang">
+                <div class="d-inline-flex align-items-stretch img-wrapper__inner">
+                  <div>
+                    <img
+                      v-lazy="imgObj"
+                      src="/images/lazyload/loading.svg"
+                      class="img-fluid"
+                      alt="Siêu Tỏi Phan Rang">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -31,11 +35,8 @@
               :position="item.position"/>
           </div>
         </div>
-
-
       </div>
     </div>
-
   </section>
 </template>
 
@@ -48,7 +49,7 @@ export default {
   data() {
     return {
       imgObj: {
-        src: '/images/garlics/garlic.png'
+        src: '/images/garlics/garlic-square.png'
       },
       items: [
         {
@@ -61,7 +62,7 @@ export default {
         {
           title: 'Trị cảm cúm thông thường',
           description:
-            'Giúp cơ thể chống lại cơn cảm lạnh thông thường, giảm ho và phục hồi sức khỏe nhanh hơn.',
+            'Giúp chống lại cơn cảm lạnh thông thường, giảm ho và phục hồi sức khỏe nhanh hơn.',
           image: 'https://via.placeholder.com/64x64',
           position: 'right'
         },
@@ -79,28 +80,22 @@ export default {
           position: 'left'
         },
         {
-          title: 'Cải thiện hệ xương',
+          title: 'Ngăn ngừa nguy cơ sinh non',
           description:
-            'Tỏi chứa nhiều chất dinh dưỡng giúp phát triển hệ xương khỏe mạnh, đặc biệt làm chậm quá trình loãng xương ở phụ nữ.',
+            'Các hợp chất kháng sinh trong tỏi có khả năng giảm nguy cơ sinh non tự phát.',
           image: 'https://via.placeholder.com/64x64',
           position: 'left'
         },
         {
-          title: 'Ngăn ngừa nguy cơ sinh non',
+          title: 'Cải thiện hệ xương',
           description:
-            'Các hợp chất kháng sinh trong tỏi có khả năng giảm nguy cơ sinh non tự phát.',
+            'Chứa nhiều chất dinh dưỡng giúp phát triển hệ xương khỏe mạnh, làm chậm quá trình loãng xương.',
           image: 'https://via.placeholder.com/64x64',
           position: 'left'
         }
       ]
     }
   },
-  // computed: {
-  //   getItemIndex(number) {
-  //     console.log(number)
-  //     return ''
-  //   }
-  // },
   methods: {
     getGridItemIndex(id) {
       return `grid_g__${id + 1}`
@@ -119,24 +114,18 @@ export default {
 @supports (display: grid) {
   .grid_g {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      'g1 m g4'
-      'g2 m g5'
-      'g3 m g6';
+      'g1 g1 g1 g1'
+      'g2 m m g4'
+      'g3 m m g5'
+      'g6 g6 g6 g6';
 
     // &__item {
     //   justify-self: center;
     // }
 
-    &__m {
-      align-self: center;
-    }
-
-    &__m {
-      grid-area: m;
-    }
     &__1 {
       grid-area: g1;
     }
@@ -149,44 +138,48 @@ export default {
     &__4 {
       grid-area: g4;
     }
+    &__5 {
+      grid-area: g5;
+    }
+    &__6 {
+      grid-area: g6;
+    }
+
+    // Style
+    &__m {
+      grid-area: m;
+      padding: 0 3rem;
+      align-self: center;
+    }
+
+    &__1,
+    &__6 {
+      justify-self: center;
+      text-align: center;
+    }
+
+    &__2,
+    &__3 {
+      justify-self: right;
+      text-align: right;
+    }
   }
 }
 
 .why-garlic {
-  margin-top: 5rem;
-
-  @include media-breakpoint-up(md) {
-    --image-wrapper-inner-size: 320px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    --image-wrapper-inner-size: 400px;
-  }
+  margin-top: 1rem;
 
   .img-container {
     .img-wrapper {
-      position: relative;
-
       &__inner {
-        border-radius: 1000px;
-        position: absolute;
-        width: 320px;
-        height: 320px;
-        background: radial-gradient(
-          $garlic,
-          transparentize($color: $garlic, $amount: 1)
-        );
-
+        border: 1px dotted $garlic;
+        border-radius: 100rem;
+        padding: 3rem;
         transition: all 0.3s ease-in-out;
+        img {
+          transition: all 0.3s ease-in-out;
+        }
       }
-
-      img {
-        z-index: 1;
-      }
-    }
-
-    @include media-breakpoint-down(xs) {
-      margin-bottom: 5rem;
     }
   }
 }

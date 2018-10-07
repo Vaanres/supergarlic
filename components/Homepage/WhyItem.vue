@@ -1,12 +1,11 @@
 <template>
-  <div
-    :class="itemPosition"
-    class="d-inline-block item-detail p-4">
 
+  <div
+    class="d-inline-block item-detail py-4">
     <div
       class="item-detail__icon d-inline-flex justify-content-center align-items-center p-1 mb-2">
       <div class="item-detail__icon__number d-inline-block">
-        {{ id }}
+        {{ getOrderNumber }}
       </div>
     </div>
     <div>
@@ -45,9 +44,9 @@ export default {
       default: 'left'
     }
   },
-  data: function() {
-    return {
-      itemPosition: this.position == 'right' ? 'text-lg-right' : ''
+  computed: {
+    getOrderNumber: function() {
+      return this.id + 1
     }
   }
 }

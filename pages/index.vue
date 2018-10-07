@@ -1,7 +1,6 @@
 <template>
   <div>
     <Hero/>
-
     <WhyGarlic/>
   </div>
 

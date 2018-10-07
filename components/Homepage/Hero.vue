@@ -22,6 +22,7 @@
             <div class="d-flex align-items-stretch img-wrapper__inner"/>
             <img
               v-lazy="imgObj"
+              src="/images/lazyload/loading.svg"
               class="img-fluid hero-img"
               alt="Siêu Tỏi Phan Rang">
           </div>

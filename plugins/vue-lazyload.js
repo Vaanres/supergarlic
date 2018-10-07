@@ -11,5 +11,22 @@ Vue.use(VueLazyload, {
   preLoad: 2,
   attempt: 3,
   error: '/images/lazyload/error.svg',
-  loading: '/images/lazyload/loading.svg'
+  loading: '/images/lazyload/loading.svg',
+
+  filter: {
+    webp(listener, options) {
+      if (listener.src && options.supportWebp) {
+        var extension = listener.src.split('.').pop()
+        if (extension == 'jpg' || extension == 'png') {
+          var file =
+            listener.src.substr(0, listener.src.lastIndexOf('.')) + '.webp'
+          listener.src = file
+        } else {
+          return
+        }
+      } else {
+        return
+      }
+    }
+  }
 })

@@ -1,5 +1,17 @@
 var gulp = require('gulp')
 const imagemin = require('gulp-imagemin')
+const webp = require('gulp-webp')
+
+gulp.task('webp', () =>
+  gulp
+    .src(['./images/**/*.{jpg,png}'])
+    .pipe(
+      webp({
+        quality: 100
+      })
+    )
+    .pipe(gulp.dest('./static/images/'))
+)
 
 gulp.task('img-min', function() {
   return gulp
@@ -29,3 +41,5 @@ gulp.task('img-min', function() {
     )
     .pipe(gulp.dest('./static/images/'))
 })
+
+gulp.task('img', ['webp', 'img-min'])
