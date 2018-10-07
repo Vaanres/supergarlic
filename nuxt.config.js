@@ -23,11 +23,11 @@ module.exports = {
       }
     ],
     link: [
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese'
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese'
+      // },
       {
         rel: 'icon',
         type: 'image/x-icon',
@@ -46,7 +46,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/fonts/Quicksand.css'],
 
   /*
    ** Plugins to load before mounting the App
