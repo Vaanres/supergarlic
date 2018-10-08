@@ -1,11 +1,11 @@
 <template>
   <section class="section section__light">
     <div class="container">
-      <h2 class="section__light__title text-center">Tại sao Tỏi Phan Rang đặc biệt?</h2>
+      <h2 class="section__light__title text-center">Tại sao <br class="d-block d-sm-none"> Tỏi Phan Rang <br class="d-block d-sm-none"> đặc biệt?</h2>
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
       lần tỏi thường.</p>
 
-      <div class="col-12 why-garlic">
+      <div class="col-12 p-0 mt-5 why-garlic">
         <div class="grid_g">
           <div class="grid_g__item grid_g__m">
             <div class="img-container">
@@ -122,7 +122,7 @@ export default {
   --image-wrapper-inner-size: 256px;
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-between(sm, md) {
   .section {
     background: transparent url('/images/garlics/garlic-bg-2.jpg') center 80%
       no-repeat;
@@ -135,7 +135,7 @@ export default {
 @supports (display: grid) {
   .grid_g {
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
 
     @for $i from 1 through 6 {
       &__#{$i} {
@@ -147,21 +147,33 @@ export default {
       grid-area: m;
     }
 
+    grid-template-columns: 1fr;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      'g1'
+      'g2'
+      'g3'
+      'g4'
+      'g5'
+      'g6'
+      'm';
+
+    &__m {
+      display: none;
+    }
+
     @include media-breakpoint-up(sm) {
+      gap: 1rem;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr 1fr auto;
+      grid-template-rows: repeat(3, auto);
       grid-template-areas:
         'g1 g2 g3 '
         'g4 g5 g6'
         'm m m';
-
-      &__m {
-        display: none;
-      }
     }
 
     @include media-breakpoint-up(lg) {
-      gap: 0;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
@@ -193,8 +205,6 @@ export default {
 }
 
 .why-garlic {
-  margin-top: 1rem;
-
   .img-container {
     .img-wrapper {
       &__inner {

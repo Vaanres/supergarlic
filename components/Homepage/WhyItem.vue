@@ -1,14 +1,14 @@
 <template>
-
-  <div
-    class="d-inline-block item-detail py-4">
-    <div
-      class="item-detail__icon d-inline-flex justify-content-center align-items-center p-1 mb-2">
-      <div class="item-detail__icon__number d-inline-block">
-        {{ getOrderNumber }}
+  <div class="row no-gutters item-detail">
+    <div class="col-2 col-sm-12">
+      <div
+        class="item-detail__icon d-inline-flex justify-content-center align-items-center p-1 mb-2">
+        <div class="item-detail__icon__number d-inline-block">
+          {{ getOrderNumber }}
+        </div>
       </div>
     </div>
-    <div>
+    <div class="col-10 col-sm-12">
       <p class="item-detail__title mb-1">
         <b>{{ title }}</b>
       </p>
@@ -17,6 +17,7 @@
       </p>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -76,7 +77,9 @@ export default {
   }
 
   &__description {
-    font-size: 0.8rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 0.8rem;
+    }
   }
 }
 </style>
