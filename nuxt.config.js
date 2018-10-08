@@ -23,15 +23,18 @@ module.exports = {
       }
     ],
     link: [
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&amp;subset=latin-ext,vietnamese'
-      // },
       {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
+      },
+      {
+        rel: 'prefetch',
+        href: '/about'
+      },
+      {
+        rel: 'prefetch',
+        href: '/pricing'
       }
     ]
   },
@@ -46,7 +49,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~/assets/fonts/Quicksand.css'],
+  css: ['~/assets/fonts/Quicksand.css', '~/assets/styles/animate.scss'],
 
   /*
    ** Plugins to load before mounting the App
@@ -102,5 +105,22 @@ module.exports = {
         return ['script', 'style', 'font'].includes(type)
       }
     }
-  }
+  },
+  extractCSS: true,
+  plugins: [
+    // ssr: false to only include it on client-side
+    {
+      src: '~/plugins/bootstrap-vue.js'
+    },
+    {
+      src: '~/plugins/font-awesome.js'
+    },
+    {
+      src: '~/plugins/vue-lazyload.js'
+    },
+    {
+      src: '~/plugins/vue-scroll-reveal',
+      ssr: false
+    }
+  ]
 }

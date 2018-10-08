@@ -19,7 +19,8 @@
         </div>
         <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
           <div class="d-flex img-wrapper align-items-center justify-content-center">
-            <div class="d-flex align-items-stretch img-wrapper__inner"/>
+            <!-- <div class="d-flex align-items-stretch img-wrapper__inner"/> -->
+            
             <img
               v-lazy="imgObj"
               src="/images/lazyload/loading.svg"
@@ -38,7 +39,7 @@ export default {
   data() {
     return {
       imgObj: {
-        src: '/images/garlics/garlic.png'
+        src: '/images/garlics/garlic-square.png'
       }
     }
   }
@@ -48,37 +49,29 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/styles/override';
 
-:root {
-  --image-wrapper-inner-size: 256px;
-}
-
 @keyframes image-wrapper-inner {
   0% {
     background: transparentize($color: $garlic, $amount: 1);
-    width: 100px;
-    height: 100px;
+    width: 0%;
+    height: 0%;
   }
 
   100% {
-    background: transparentize($color: $garlic, $amount: 0.5);
-    width: var(--image-wrapper-inner-size);
-    height: var(--image-wrapper-inner-size);
+    background: radial-gradient(white, transparentize($garlic, 0.5));
+    width: 85%;
+    height: 85%;
   }
 }
 
 .hero {
-  @include media-breakpoint-up(xs) {
-    padding: 3rem 0;
-    --image-wrapper-inner-size: calc(100vw - 64px);
-  }
+  padding: 0 0 3rem 0;
 
   @include media-breakpoint-up(md) {
     padding: 5rem 0;
-    --image-wrapper-inner-size: 320px;
   }
 
   @include media-breakpoint-up(lg) {
-    --image-wrapper-inner-size: 400px;
+    padding: 1rem;
   }
 
   .sub-headline {
@@ -108,22 +101,21 @@ export default {
     .img-wrapper {
       position: relative;
 
-      &__inner {
+      &::before {
+        content: '';
+        padding: 1rem;
         border-radius: 1000px;
+        margin: 0 auto;
         position: absolute;
-        animation: image-wrapper-inner 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5)
-          0.15s 1 alternate forwards;
         z-index: -1;
+        animation: image-wrapper-inner 0.5s cubic-bezier(0.5, -0.5, 0.5, 1.5)
+          0.5s 1 alternate forwards;
         transition: all 0.3s ease-in-out;
       }
 
       .hero-img {
         transition: all 0.3s ease-in-out;
       }
-    }
-
-    @include media-breakpoint-down(xs) {
-      margin-bottom: 5rem;
     }
   }
 }

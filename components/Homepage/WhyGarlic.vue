@@ -11,7 +11,8 @@
             <div class="img-container">
               <div class="d-flex img-wrapper align-items-center justify-content-center">
                 <div class="d-inline-flex align-items-stretch img-wrapper__inner">
-                  <div>
+                  <div 
+                    v-scroll-reveal="reveal">
                     <img
                       v-lazy="imgObj"
                       src="/images/lazyload/loading.svg"
@@ -48,6 +49,16 @@ export default {
   components: { WhyItem },
   data() {
     return {
+      reveal: {
+        duration: 1000,
+        scale: 1,
+        distance: '4rem',
+        easing: 'cubic-bezier(0.5, 0, 0, 1)',
+        scale: 0.5,
+        opacity: 0.1,
+        mobile: false,
+        delay: 100
+      },
       imgObj: {
         src: '/images/garlics/garlic-square.png'
       },
@@ -111,63 +122,79 @@ export default {
   --image-wrapper-inner-size: 256px;
 }
 
+@include media-breakpoint-down(md) {
+  .section {
+    background: transparent url('/images/garlics/garlic-bg-2.jpg') center 80%
+      no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 40vh;
+  }
+}
+
 @supports (display: grid) {
   .grid_g {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      'g1 g1 g1 g1'
-      'g2 m m g3'
-      'g4 m m g5'
-      'g6 g6 g6 g6';
+    gap: 1rem;
 
-    // &__item {
-    //   justify-self: center;
-    // }
-
-    &__1 {
-      grid-area: g1;
-    }
-    &__2 {
-      grid-area: g2;
-    }
-    &__3 {
-      grid-area: g3;
-    }
-    &__4 {
-      grid-area: g4;
-    }
-    &__5 {
-      grid-area: g5;
-    }
-    &__6 {
-      grid-area: g6;
+    @for $i from 1 through 6 {
+      &__#{$i} {
+        grid-area: g#{$i};
+      }
     }
 
-    // Style
     &__m {
       grid-area: m;
-      padding: 0 3rem;
-      align-self: center;
     }
 
-    &__1,
-    &__6 {
-      justify-self: center;
-      text-align: center;
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr auto;
+      grid-template-areas:
+        'g1 g2 g3 '
+        'g4 g5 g6'
+        'm m m';
+
+      &__m {
+        display: none;
+      }
     }
 
-    &__2,
-    &__4 {
-      justify-self: right;
-      text-align: right;
+    @include media-breakpoint-up(lg) {
+      gap: 0;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        'g1 g1 g1 g1'
+        'g2 m m g3'
+        'g4 m m g5'
+        'g6 g6 g6 g6';
+
+      // Style
+      &__m {
+        display: block;
+        padding: 0 3rem;
+        align-self: center;
+      }
+
+      &__1,
+      &__6 {
+        justify-self: center;
+        text-align: center;
+      }
+
+      &__2,
+      &__4 {
+        justify-self: right;
+        text-align: right;
+      }
     }
   }
 }
 
 .why-garlic {
   margin-top: 1rem;
+
   .img-container {
     .img-wrapper {
       &__inner {
@@ -175,9 +202,6 @@ export default {
         border-radius: 100rem;
         padding: 3rem;
         transition: all 0.3s ease-in-out;
-        img {
-          transition: all 0.3s ease-in-out;
-        }
       }
     }
   }
