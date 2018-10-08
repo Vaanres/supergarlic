@@ -118,8 +118,8 @@ export default {
     grid-template-rows: auto;
     grid-template-areas:
       'g1 g1 g1 g1'
-      'g2 m m g4'
-      'g3 m m g5'
+      'g2 m m g3'
+      'g4 m m g5'
       'g6 g6 g6 g6';
 
     // &__item {
@@ -159,7 +159,7 @@ export default {
     }
 
     &__2,
-    &__3 {
+    &__4 {
       justify-self: right;
       text-align: right;
     }
@@ -168,7 +168,6 @@ export default {
 
 .why-garlic {
   margin-top: 1rem;
-
   .img-container {
     .img-wrapper {
       &__inner {

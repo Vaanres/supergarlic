@@ -61,11 +61,11 @@ export default {
   &__icon {
     border: 2px dashed $garlic;
     border-radius: 10rem;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
 
     &__number {
-      font-size: 3rem;
+      font-size: 2rem;
       line-height: 1;
       font-weight: bold;
     }
