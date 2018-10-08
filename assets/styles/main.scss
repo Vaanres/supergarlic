@@ -53,3 +53,47 @@ button {
     }
   }
 }
+
+
+.curve-bottom {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(100% + 76px);
+    margin-left: -38px;
+    padding-bottom: 2.77%;
+    background-image: url('https://sketchapp.com/images/pages/home/52/round-edge.svg');
+    background-size: cover;
+    z-index: 100;
+    bottom: 0;
+  }
+}
+
+.curve-both {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(100% + 76px);
+    margin-left: -38px;
+    padding-bottom: 2.77%;
+    background-image: url('/images/svgs/round-edge.svg');
+    background-size: cover;
+    z-index: 100;
+  }
+
+  &::before {
+    top: -1px;
+    transform: rotate(180deg);
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}

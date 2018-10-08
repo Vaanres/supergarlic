@@ -1,5 +1,5 @@
 <template>
-  <section class="section section__light">
+  <section class="section section__light curve-both">
     <div class="container">
       <h2 class="section__light__title text-center">Tại sao <br class="d-block d-sm-none"> Tỏi Phan Rang <br class="d-block d-sm-none"> đặc biệt?</h2>
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
@@ -51,11 +51,11 @@ export default {
     return {
       reveal: {
         duration: 1000,
-        scale: 1,
+
         distance: '4rem',
         easing: 'cubic-bezier(0.5, 0, 0, 1)',
-        scale: 0.5,
-        opacity: 0.1,
+        scale: 0.7,
+        opacity: 0.3,
         mobile: false,
         delay: 100
       },
@@ -210,7 +210,7 @@ export default {
       &__inner {
         border: 1px dotted $garlic;
         border-radius: 100rem;
-        padding: 3rem;
+        padding: 2rem;
         transition: all 0.3s ease-in-out;
       }
     }

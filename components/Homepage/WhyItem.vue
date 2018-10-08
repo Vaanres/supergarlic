@@ -1,5 +1,6 @@
 <template>
-  <div class="row no-gutters item-detail">
+  <div 
+    class="row no-gutters item-detail">
     <div class="col-2 col-sm-12">
       <div
         class="item-detail__icon d-inline-flex justify-content-center align-items-center p-1 mb-2">
