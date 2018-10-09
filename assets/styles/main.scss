@@ -80,8 +80,7 @@ button {
     content: "";
     display: block;
     position: absolute;
-    width: calc(100% + 76px);
-    margin-left: -38px;
+    width: 100%;
     padding-bottom: 2.77%;
     background-image: url('/images/svgs/round-edge.svg');
     background-size: cover;
@@ -94,6 +93,13 @@ button {
   }
 
   &::after {
-    bottom: 0;
+
+    bottom: -1px;
+
+    @include media-breakpoint-only(md) {
+      bottom: -5px;
+    }
+
+
   }
 }
