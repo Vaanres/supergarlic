@@ -1,5 +1,7 @@
 <template>
-  <section class="section section__light curve-both">
+  <section 
+    v-lazy:background-image="imgBgObj" 
+    class="section section__light curve-both">
     <div class="container">
       <h2 class="section__light__title text-center">Tại sao Tỏi Phan Rang đặc biệt?</h2>
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
@@ -13,6 +15,7 @@
                 <div class="d-inline-flex align-items-stretch img-wrapper__inner">
                   <div 
                     v-scroll-reveal="reveal">
+                    <!-- <FloatImg :img-obj="imgObj" /> -->
                     <img
                       v-lazy="imgObj"
                       src="/images/lazyload/loading.svg"
@@ -43,15 +46,15 @@
 
 <script>
 import WhyItem from './WhyItem'
+import FloatImg from '../Public/FloatImg'
 
 export default {
   name: 'WhyGarlic',
-  components: { WhyItem },
+  components: { WhyItem, FloatImg },
   data() {
     return {
       reveal: {
         duration: 1000,
-
         distance: '4rem',
         easing: 'cubic-bezier(0.5, 0, 0, 1)',
         scale: 0.7,
@@ -60,7 +63,11 @@ export default {
         delay: 100
       },
       imgObj: {
-        src: '/images/garlics/garlic-square.png'
+        src: '/images/garlics/garlic-square.png',
+        alt: 'Siêu Tỏi Phan rang'
+      },
+      imgBgObj: {
+        src: '/images/garlics/garlic-bg-2.jpg'
       },
       items: [
         {
@@ -123,9 +130,12 @@ export default {
 }
 
 .section {
+  @include media-breakpoint-up(lg) {
+    background-image: none !important;
+  }
+
   @include media-breakpoint-down(md) {
-    background: transparent url('/images/garlics/garlic-bg-2.jpg') center 100%
-      no-repeat;
+    background: transparent center 100% no-repeat;
     background-size: cover;
     padding-top: 60px;
     padding-bottom: 40vh;

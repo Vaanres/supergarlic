@@ -19,13 +19,8 @@
         </div>
         <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
           <div class="d-flex img-wrapper align-items-center justify-content-center">
-            <!-- <div class="d-flex align-items-stretch img-wrapper__inner"/> -->
-            
-            <img
-              v-lazy="imgObj"
-              src="/images/lazyload/loading.svg"
-              class="img-fluid hero-img"
-              alt="Siêu Tỏi Phan Rang">
+            <FloatImg :img-obj="imgObj" />
+        
           </div>
         </div>
       </div>
@@ -34,12 +29,44 @@
 </template>
 
 <script>
+import FloatImg from '../Public/FloatImg'
+
 export default {
   name: 'Hero',
+  components: { FloatImg },
   data() {
     return {
       imgObj: {
-        src: '/images/garlics/garlic-square.png'
+        src: '/images/garlics/garlic-square.png',
+        alt: 'Siêu Tỏi Phan Rang'
+      }
+    }
+  },
+  computed: {
+    imgTranslate3D() {
+      return `translateY(${this.imgObj.translateY}px)`
+    }
+  },
+  created() {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
+  methods: {
+    handleScroll() {
+      if (process.browser) {
+        var y = window.pageYOffset
+        var h = Math.max(
+          document.documentElement.clientHeight,
+          window.innerHeight || 0
+        )
+
+        this.imgObj.translateY = 0 - Math.round(y / 15)
       }
     }
   }
@@ -113,8 +140,8 @@ export default {
         transition: all 0.3s ease-in-out;
       }
 
-      .hero-img {
-        transition: all 0.3s ease-in-out;
+      img {
+        transition: all 0.3s ease;
       }
     }
   }
