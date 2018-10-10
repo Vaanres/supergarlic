@@ -1,7 +1,7 @@
 <template>
   <section class="section section__light curve-both">
     <div class="container">
-      <h2 class="section__light__title text-center">Tại sao <br class="d-block d-sm-none"> Tỏi Phan Rang <br class="d-block d-sm-none"> đặc biệt?</h2>
+      <h2 class="section__light__title text-center">Tại sao Tỏi Phan Rang đặc biệt?</h2>
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
       lần tỏi thường.</p>
 
@@ -133,7 +133,7 @@ export default {
 
   @include media-breakpoint-down(xs) {
     background-size: contain;
-    padding-bottom: 25vh;
+    padding-bottom: 35vh;
   }
 }
 
