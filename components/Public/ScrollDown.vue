@@ -180,7 +180,7 @@ export default {
     text-transform: uppercase;
     font-size: 0.7rem;
     font-weight: 500;
-    transition: all 0.3s linear;
+    transition: all 0.25s linear;
   }
 
   &:hover {

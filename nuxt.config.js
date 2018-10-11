@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const meta = require('./meta')
 
 module.exports = {
   mode: 'universal',
@@ -7,7 +8,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: meta.name,
     meta: [
       {
         charset: 'utf-8'
@@ -19,7 +20,66 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: meta.description
+      },
+      {
+        name: 'keywords',
+        content: meta.keywords
+      },
+      {
+        name: 'image',
+        content: meta.image
+      },
+      // Google
+      {
+        itemprop: 'name',
+        content: meta.name
+      },
+      {
+        itemprop: 'description',
+        content: meta.description
+      },
+      {
+        itemprop: 'image',
+        content: meta.image
+      },
+      // Twitter
+      {
+        name: 'twitter:card',
+        content: 'summary'
+      },
+      {
+        name: 'twitter:title',
+        content: meta.name
+      },
+      {
+        name: 'twitter:description',
+        content: meta.description
+      },
+      // Open Graph
+      {
+        name: 'og:title',
+        content: meta.name
+      },
+      {
+        name: 'og:description',
+        content: meta.description
+      },
+      {
+        name: 'og:image',
+        content: meta.image
+      },
+      {
+        name: 'og:url',
+        content: meta.url
+      },
+      {
+        name: 'og:site_name',
+        content: meta.name
+      },
+      {
+        name: 'og:type',
+        content: 'website'
       }
     ],
     link: [
@@ -122,5 +182,9 @@ module.exports = {
       src: '~/plugins/vue-scroll-reveal',
       ssr: false
     }
-  ]
+  ],
+  env: {
+    site_name: `- ${meta.name}`,
+    site_description: `- ${meta.description}`
+  }
 }

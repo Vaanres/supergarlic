@@ -1,24 +1,31 @@
 <template>
-  <transition 
-    name="custom-classes-transition"
-    enter-active-class="animated fadeInUp"
-    leave-active-class="animated fadeOutDown">
-    <div 
-      v-if="show"
-      class="btn-scroll-up"
-      @mouseover="buttonScrollUpMouseOver"
-      @mouseleave="buttonScrollUpMouseOut"
-      @click="buttonScrollUpClicked">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-end ">
+      <transition 
+        name="custom-classes-transition"
+        enter-active-class="animated fadeInUp"
+        leave-active-class="animated fadeOutDown">
+        <div 
+          v-if="show"
+          class="btn-scroll-up"
+          @mouseover="buttonScrollUpMouseOver"
+          @mouseleave="buttonScrollUpMouseOut"
+          @click="buttonScrollUpClicked">
 
-      <div 
-        :class="{animate:hover}"
-        class="btn-scroll-up__icon">
-        <font-awesome-icon
-          icon="arrow-up"
-          fixed-width/> 
-      </div>
+          <div 
+            :class="{animate:hover}"
+            class="btn-scroll-up__icon">
+            <font-awesome-icon
+              icon="arrow-up"
+              fixed-width/> 
+          </div>
+        </div>
+      </transition>
+
     </div>
-  </transition>
+  </div>
+  
+  
 </template>
 
 <script>
@@ -69,20 +76,32 @@ export default {
   display: inline-flex;
   width: 3rem;
   height: 3rem;
-  bottom: 2rem;
-  right: 2rem;
+
   border-radius: 2rem;
   transition: all 0.5s ease;
 
   text-align: center;
+  align-self: center;
+  justify-self: center;
   justify-content: center;
   vertical-align: middle;
   flex-direction: column;
   cursor: pointer;
   color: $secondary;
   border: 1px solid $gray-200;
-  background: transparent;
   transition: all 0.3s ease;
+  bottom: 6rem;
+  margin: 0 auto;
+  background: white;
+
+  @include media-breakpoint-up(sm) {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    background: transparent;
+  }
 
   &:hover {
     border-color: $gray-300;

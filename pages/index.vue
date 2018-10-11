@@ -15,6 +15,18 @@ export default {
   components: {
     Hero,
     WhyGarlic
+  },
+  head() {
+    return {
+      title: `Trang chủ ${process.env.site_name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Trang chủ ${process.env.site_description}`
+        }
+      ]
+    }
   }
 }
 </script>

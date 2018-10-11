@@ -13,7 +13,6 @@
     </div>
     
     <no-ssr>
-      <ScrollDown scroll-to="next-section"/>
       <ScrollUp/>
     </no-ssr>
   </div>
