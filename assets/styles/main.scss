@@ -82,9 +82,9 @@ button {
     position: absolute;
     width: 100%;
     padding-bottom: 2.77%;
-    background-image: url('/images/svgs/round-edge.svg');
+    background-image: url('/images/svg/round-edge.svg');
     background-size: cover;
-    z-index: 100;
+    z-index: 0;
   }
 
   &::before {

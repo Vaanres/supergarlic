@@ -11,6 +11,11 @@
         <Footer/>
       </footer>
     </div>
+    
+    <no-ssr>
+      <ScrollDown scroll-to="next-section"/>
+      <ScrollUp/>
+    </no-ssr>
   </div>
 </template>
 
@@ -18,11 +23,15 @@
 <script>
 import Navigator from '../components/Navigator'
 import Footer from '../components/Footer'
+import ScrollUp from '../components/Public/ScrollUp'
+import ScrollDown from '../components/Public/ScrollDown'
 
 export default {
   components: {
     Navigator,
-    Footer
+    Footer,
+    ScrollUp,
+    ScrollDown
   },
   data() {
     return {

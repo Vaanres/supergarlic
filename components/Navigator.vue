@@ -187,6 +187,7 @@ export default {
 
   .btn-navbar {
     font-size: var(--navbar-font-size);
+    padding: 0.5rem 1.2rem;
 
     & ~ .btn-navbar {
       @include media-breakpoint-down(md) {

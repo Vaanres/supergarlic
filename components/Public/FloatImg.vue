@@ -25,7 +25,6 @@ export default {
       }
     }
   },
-
   data() {
     return {
       translateY: 0,
@@ -37,27 +36,21 @@ export default {
       return `translateY(${this.translateY}px)`
     }
   },
-  created() {
-    if (process.browser) {
-      window.addEventListener('scroll', this.handleScroll)
-    }
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  destroyed() {
-    if (process.browser) {
-      window.removeEventListener('scroll', this.handleScroll)
-    }
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll() {
-      if (process.browser) {
-        var y = window.pageYOffset
-        var h = Math.max(
-          document.documentElement.clientHeight,
-          window.innerHeight || 0
-        )
+      var y = window.pageYOffset
+      var h = Math.max(
+        document.documentElement.clientHeight,
+        window.innerHeight || 0
+      )
 
-        this.translateY = 0 - Math.round(y / 15)
-      }
+      this.translateY = 0 - Math.round(y / 15)
     }
   }
 }

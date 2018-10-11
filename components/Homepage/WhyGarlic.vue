@@ -3,11 +3,11 @@
     v-lazy:background-image="imgBgObj" 
     class="section section__light curve-both">
     <div class="container">
-      <h2 class="section__light__title text-center">Tại sao Tỏi Phan Rang đặc biệt?</h2>
+      <h2 class="section__light__title text-center next-section">Tại sao Tỏi Phan Rang đặc biệt?</h2>
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
       lần tỏi thường.</p>
 
-      <div class="col-12 p-0 mt-5 why-garlic">
+      <div class="col-12 p-0 mt-5 why-garlic ">
         <div class="grid_g">
           <div class="grid_g__item grid_g__m">
             <div class="img-container">

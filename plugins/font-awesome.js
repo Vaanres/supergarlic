@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 import {
   FontAwesomeIcon,
@@ -8,7 +8,7 @@ import {
   FontAwesomeLayersText
 } from '@fortawesome/vue-fontawesome'
 
-library.add(faPhone)
+library.add(faPhone, faArrowUp)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('font-awesome-layers', FontAwesomeLayers)
