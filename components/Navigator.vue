@@ -20,7 +20,7 @@
       <b-collapse
         id="nav_collapse"
         is-nav>
-        <b-navbar-nav class=" mr-auto">
+        <b-navbar-nav class="mr-auto">
           <b-nav-item
             v-for="(item, index) in links"
             :key="index"

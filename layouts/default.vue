@@ -8,7 +8,7 @@
         <nuxt/>
       </section>
       <footer class="grid__footer">
-        <Footer/>
+        <Footer :links="links"/>
       </footer>
     </div>
     

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="d-flex align-items-center justify-content-end ">
       <transition 
         name="custom-classes-transition"
@@ -67,45 +67,30 @@ export default {
 <style lang="scss" scoped>
 @import '~assets/styles/override';
 
-:root {
-  --scroll-up-color: var(--gray);
-}
-
 .btn-scroll-up {
   position: fixed;
   display: inline-flex;
   width: 3rem;
   height: 3rem;
-
   border-radius: 2rem;
   transition: all 0.5s ease;
 
   text-align: center;
-  align-self: center;
-  justify-self: center;
+
   justify-content: center;
   vertical-align: middle;
   flex-direction: column;
   cursor: pointer;
   color: $secondary;
-  border: 1px solid $gray-200;
+  border: 1px solid $secondary;
   transition: all 0.3s ease;
-  bottom: 6rem;
+  bottom: 2rem;
   margin: 0 auto;
   background: white;
-
-  @include media-breakpoint-up(sm) {
-    bottom: 2rem;
-    right: 2rem;
-  }
-
-  @include media-breakpoint-up(lg) {
-    background: transparent;
-  }
+  opacity: 0.5;
 
   &:hover {
-    border-color: $gray-300;
-    color: $gray-700;
+    opacity: 1;
   }
 
   @include media-breakpoint-up(lg) {

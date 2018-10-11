@@ -54,7 +54,6 @@ button {
   }
 }
 
-
 .curve-bottom {
   position: relative;
 
@@ -93,13 +92,10 @@ button {
   }
 
   &::after {
-
     bottom: -1px;
 
     @include media-breakpoint-only(md) {
       bottom: -5px;
     }
-
-
   }
 }
