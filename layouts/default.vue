@@ -11,7 +11,7 @@
         <Footer :links="links"/>
       </footer>
     </div>
-  
+
   </div>
 </template>
 
@@ -34,11 +34,11 @@ export default {
           name: 'Trang chủ',
           path: '/'
         },
-        {
-          id: 2,
-          name: 'Bảng giá',
-          path: 'pricing'
-        },
+        // {
+        //   id: 2,
+        //   name: 'Bảng giá',
+        //   path: 'pricing'
+        // },
         {
           id: 3,
           name: 'Về chúng tôi',
