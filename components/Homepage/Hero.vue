@@ -7,15 +7,18 @@
           <h1 class="headline mb-3">Tỏi Phan Rang</h1>
           <p class="description ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
           <div class="row">
-            <div class="col-12 col-md-8 col-lg-6">
+
+            <div class="col-12 col-md-8 col-lg-6 mt-3">
+              <p class="price mb-0"> <b>150.000 đ </b> 
+                <small class="text-secondary">/ 1 kg</small>
+              </p>
               <button
                 type="button"
-                class="btn btn-primary btn-lg btn-block btn-hero mt-3">
+                class="btn btn-primary btn-lg btn-block btn-hero ">
                 Đặt mua ngay
               </button>
             </div>
           </div>
-
         </div>
         <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
           <div class="d-flex img-wrapper align-items-center justify-content-center">
@@ -99,6 +102,10 @@ export default {
 
   @include media-breakpoint-up(lg) {
     padding: 1rem;
+  }
+
+  .price {
+    font-size: 2rem;
   }
 
   .sub-headline {

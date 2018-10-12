@@ -9,14 +9,12 @@
 <script>
 import Hero from '../components/Homepage/Hero'
 import WhyGarlic from '../components/Homepage/WhyGarlic'
-import RequestForm from '../components/Homepage/RequestForm'
 
 export default {
   name: 'Index',
   components: {
     Hero,
-    WhyGarlic,
-    RequestForm
+    WhyGarlic
   },
   head() {
     return {
