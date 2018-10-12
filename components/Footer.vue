@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-start"> 
+      <div class="col-12 col-md-2 d-flex align-items-center justify-content-center justify-content-md-start"> 
         <div class="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
          
           <img
@@ -10,7 +10,7 @@
             alt="Siêu tỏi logo"><b>SiêuTỏi</b>
         </div>
       </div>
-      <div class="col-12 col-md-4 d-flex align-items-center justify-content-center"> 
+      <div class="col-12 col-md-8 d-flex align-items-center justify-content-center"> 
         <div class="mb-4 mb-md-0">
           <b-button 
             v-for="(item, index) in links"
@@ -21,7 +21,7 @@
           </b-button>
         </div>
       </div>
-      <div class="col-12  col-md-4 d-flex align-items-center justify-content-center justify-content-md-end">
+      <div class="col-12  col-md-2 d-flex align-items-center justify-content-center justify-content-md-end">
         <div>
           <a 
             v-b-tooltip="tooltip"

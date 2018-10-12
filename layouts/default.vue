@@ -12,9 +12,7 @@
       </footer>
     </div>
     
-    <no-ssr>
-      <ScrollUp/>
-    </no-ssr>
+   
   </div>
 </template>
 
