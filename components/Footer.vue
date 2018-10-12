@@ -26,14 +26,18 @@
           <a 
             v-b-tooltip="tooltip"
             class="social-link"
+            aria-label="Theo dõi Siêu Tỏi trên Facebook"
             title="Theo dõi Siêu Tỏi trên Facebook"
+            target="_blank"
             href="#">
             <font-awesome-icon :icon="iconFacebook" />
           </a>
           <a 
             v-b-tooltip="tooltip"
             class="social-link"
+            aria-label="Chat với Siêu Tỏi trên Facebook Messenger"
             title="Chat với Siêu Tỏi trên Facebook Messenger"
+            target="_blank"
             href="#">
             <font-awesome-icon :icon="iconMessenger" />
           </a>

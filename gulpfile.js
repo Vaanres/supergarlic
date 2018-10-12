@@ -19,7 +19,7 @@ gulp.task(
       .src([SRC])
       .pipe(
         webp({
-          quality: 100
+          quality: 80
         })
       )
       .pipe(gulp.dest(DIST))

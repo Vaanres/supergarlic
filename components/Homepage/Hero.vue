@@ -3,18 +3,17 @@
     <div class="container">
       <div class="row hero align-items-center">
         <div class="col-12 col-md-6 order-2 order-md-1 hero-content-container">
-          <p class="sub-headline mb-3 d-inline-flex"> ĐẶC SẢN NINH THUẬN</p>
+          <p class="sub-headline text-dark bg-light mb-3 d-inline-flex"> ĐẶC SẢN NINH THUẬN</p>
           <h1 class="headline mb-3">Tỏi Phan Rang</h1>
-          <p class="description ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
+          <p class="text-secondary ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
           <div class="row">
-
             <div class="col-12 col-md-8 col-lg-6 mt-3">
               <p class="price mb-0"> <b>150.000 đ </b> 
                 <small class="text-secondary">/ 1 kg</small>
               </p>
               <button
                 type="button"
-                class="btn btn-primary btn-lg btn-block btn-hero ">
+                class="btn btn-primary btn-lg btn-block btn-hero border-0">
                 Đặt mua ngay
               </button>
             </div>
@@ -110,8 +109,6 @@ export default {
 
   .sub-headline {
     font-weight: 500;
-    color: $secondary;
-    background: transparentize($color: $secondary, $amount: 0.9);
     border-radius: 0.5rem;
     padding: 0.3rem 0.5rem;
     font-size: 0.8rem;
@@ -121,10 +118,6 @@ export default {
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: -1px;
-  }
-
-  .description {
-    color: $secondary;
   }
 
   .btn-hero {
