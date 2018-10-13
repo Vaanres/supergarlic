@@ -131,11 +131,11 @@ module.exports = {
       {
         css: false
       }
-    ],
-    '@nuxtjs/pwa',
-    '@nuxtjs/manifest',
-    '@nuxtjs/icon',
-    '@nuxtjs/meta'
+    ]
+    // '@nuxtjs/pwa',
+    // '@nuxtjs/manifest',
+    // '@nuxtjs/icon',
+    // '@nuxtjs/meta'
   ],
   /*
    ** Axios module configuration

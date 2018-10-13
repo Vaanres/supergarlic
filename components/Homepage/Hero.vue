@@ -8,8 +8,7 @@
           <p class="text-secondary ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
           <div class="row">
             <div class="col-12 col-md-8 col-lg-6 mt-3">
-              <p class="price mb-0"> <b>150.000 đ </b> 
-                <small class="text-secondary">/ 1 kg</small>
+              <p class="price mb-0"> <b>150.000đ</b><small class="text-secondary">/1kg</small>
               </p>
               <button
                 type="button"
@@ -22,7 +21,7 @@
         <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
           <div class="d-flex img-wrapper align-items-center justify-content-center">
             <FloatImg :img-obj="imgObj" />
-        
+
           </div>
         </div>
       </div>
