@@ -34,20 +34,21 @@
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="navbar-actions">
-
-          <a
-            class="btn btn-navbar btn-light d-md-none d-lg-inline-block"
-            href="tel:0898120400" >
-            <!-- btn-navbar btn-call -->
-            <font-awesome-icon
-              icon="phone"
-              fixed-width/> 0898 120 400
-          </a>
-          <button
-            type="button"
-            class="btn btn-primary btn-navbar">
-            Đặt mua ngay
-          </button>
+          <li class="d-flex flex-column flex-lg-row">
+            <a
+              class="btn btn-navbar btn-light d-md-none d-lg-inline-block"
+              href="tel:0898120400" >
+              <!-- btn-navbar btn-call -->
+              <font-awesome-icon
+                icon="phone"
+                fixed-width/> 0898 120 400
+            </a>
+            <button
+              type="button"
+              class="btn btn-primary btn-navbar">
+              Đặt mua ngay
+            </button>
+          </li>
         </b-navbar-nav>
       </b-collapse>
     </div>

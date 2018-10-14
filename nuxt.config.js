@@ -8,6 +8,9 @@ module.exports = {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'vi-VN'
+    },
     title: meta.name,
     meta: [
       {
