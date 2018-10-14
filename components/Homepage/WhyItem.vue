@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     class="row no-gutters item-detail">
     <div class="col-2 col-sm-12">
       <div
@@ -18,7 +18,7 @@
       </p>
     </div>
   </div>
-  
+
 </template>
 
 <script>
@@ -40,10 +40,6 @@ export default {
     description: {
       type: String,
       default: ''
-    },
-    position: {
-      type: String,
-      default: 'left'
     }
   },
   computed: {
@@ -77,9 +73,17 @@ export default {
     font-size: 1rem;
   }
 
-  &__description {
-    @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(sm) {
+    &__description {
       font-size: 0.8rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 300px;
+
+    &__description {
+      letter-spacing: -0.1px;
     }
   }
 }

@@ -1,21 +1,20 @@
 <template>
-  <section 
-    v-lazy:background-image="imgBgObj" 
+  <section
+    v-lazy:background-image="imgBgObj"
     class="section section__light curve-both">
     <div class="container">
       <h2 class="section__light__title text-center next-section">Tại sao Tỏi Phan Rang đặc biệt?</h2>
       <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
       lần tỏi thường.</p>
 
-      <div class="col-12 p-0 mt-5 why-garlic ">
+      <div class="col-12 p-0 mt-4 why-garlic ">
         <div class="grid_g">
           <div class="grid_g__item grid_g__m">
             <div class="img-container">
               <div class="d-flex img-wrapper align-items-center justify-content-center">
                 <div class="d-inline-flex align-items-stretch img-wrapper__inner">
-                  <div 
+                  <div
                     v-scroll-reveal="reveal">
-                    <!-- <FloatImg :img-obj="imgObj" /> -->
                     <img
                       v-lazy="imgObj"
                       src="/images/lazyload/loading.svg"
@@ -35,8 +34,7 @@
               :id="index"
               :title="item.title"
               :description="item.description"
-              :image="item.image"
-              :position="item.position"/>
+              :image="item.image" />
           </div>
         </div>
       </div>
@@ -73,43 +71,31 @@ export default {
         {
           title: 'Phòng chống ung thư',
           description:
-            'Chống lại ung thư dạ dày và đại trực tràng, giảm tỷ lệ các khối u ung thư.',
-          image: 'https://via.placeholder.com/64x64',
-          position: 'right'
+            'Chống lại ung thư dạ dày và đại trực tràng, giảm tỷ lệ các khối u ung thư'
         },
         {
           title: 'Trị cảm cúm thông thường',
           description:
-            'Giúp chống lại cơn cảm lạnh thông thường, giảm ho và phục hồi sức khỏe nhanh hơn.',
-          image: 'https://via.placeholder.com/64x64',
-          position: 'right'
+            'Giúp chống lại cơn cảm lạnh thông thường, giảm ho và phục hồi sức khỏe nhanh hơn'
         },
         {
           title: 'Trị mụn trứng cá',
           description:
-            'Điều trị mụn tự nhiên có hiệu quả cao, ngừa sẹo mụn, các bệnh ngoài da và dị ứng.',
-          image: 'https://via.placeholder.com/64x64',
-          position: 'right'
-        },
-        {
-          title: 'Ổn định huyết áp',
-          description: 'Giúp cơ thể luôn duy trì mức huyết áp ổn định.',
-          image: 'https://via.placeholder.com/64x64',
-          position: 'left'
-        },
-        {
-          title: 'Ngăn ngừa nguy cơ sinh non',
-          description:
-            'Các hợp chất kháng sinh trong tỏi có khả năng giảm nguy cơ sinh non tự phát.',
-          image: 'https://via.placeholder.com/64x64',
-          position: 'left'
+            'Điều trị mụn tự nhiên có hiệu quả cao, ngừa sẹo mụn, các bệnh ngoài da và dị ứng'
         },
         {
           title: 'Cải thiện hệ xương',
           description:
-            'Chứa nhiều chất dinh dưỡng giúp phát triển hệ xương khỏe mạnh, làm chậm quá trình loãng xương.',
-          image: 'https://via.placeholder.com/64x64',
-          position: 'left'
+            'Chứa nhiều chất dinh dưỡng giúp phát triển hệ xương khỏe mạnh, làm chậm quá trình loãng xương'
+        },
+        {
+          title: 'Ngăn ngừa nguy cơ sinh non',
+          description:
+            'Các hợp chất kháng sinh trong tỏi có khả năng giảm nguy cơ sinh non tự phát'
+        },
+        {
+          title: 'Ổn định huyết áp',
+          description: 'Giúp cơ thể luôn duy trì mức huyết áp ổn định'
         }
       ]
     }
@@ -189,18 +175,18 @@ export default {
     }
 
     @include media-breakpoint-up(lg) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, auto);
       grid-template-areas:
-        'g1 g1 g1 g1'
-        'g2 m m g3'
-        'g4 m m g5'
-        'g6 g6 g6 g6';
+        'g1 g1 g1'
+        'g2 m g3'
+        'g4 m g5'
+        'g6 g6 g6';
 
       // Style
       &__m {
         display: block;
-        padding: 0 3rem;
+        padding: 0 1rem;
         align-self: center;
       }
 
@@ -225,7 +211,7 @@ export default {
       &__inner {
         border: 1px dotted $garlic;
         border-radius: 100rem;
-        padding: 2rem;
+        padding: 1rem;
         transition: all 0.3s ease-in-out;
       }
     }
