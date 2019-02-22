@@ -3,8 +3,9 @@
     v-lazy="imgObj"
     :src="imgLoadingSrc"
     :alt="imgObj.alt"
-    :style="{transform: imgTranslate3D}"
-    class="img-fluid">
+    :style="{ transform: imgTranslate3D }"
+    class="img-fluid"
+  />
 </template>
 
 <script>
@@ -45,10 +46,10 @@ export default {
   methods: {
     handleScroll() {
       var y = window.pageYOffset
-      var h = Math.max(
-        document.documentElement.clientHeight,
-        window.innerHeight || 0
-      )
+      // var h = Math.max(
+      //   document.documentElement.clientHeight,
+      //   window.innerHeight || 0
+      // )
 
       this.translateY = 0 - Math.round(y / 15)
     }
@@ -56,5 +57,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

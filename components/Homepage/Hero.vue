@@ -3,25 +3,35 @@
     <div class="container">
       <div class="row hero align-items-center">
         <div class="col-12 col-md-6 order-2 order-md-1 hero-content-container">
-          <p class="sub-headline text-dark bg-light mb-3 d-inline-flex"> ĐẶC SẢN NINH THUẬN</p>
+          <p class="sub-headline text-dark bg-light mb-3 d-inline-flex">
+            ĐẶC SẢN NINH THUẬN
+          </p>
           <h1 class="headline mb-3">Tỏi Phan Rang</h1>
-          <p class="text-secondary ">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát trùng, chống viêm nhiễm và làm đẹp.</p>
+          <p class="text-secondary ">
+            Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các
+            nguyên tố vi lượng cao gấp nhiều lần tỏi thường. Chúng có tác dụng
+            tăng cường đề kháng, chống lại virus gây bệnh, diệt khuẩn, sát
+            trùng, chống viêm nhiễm và làm đẹp.
+          </p>
           <div class="row">
             <div class="col-12 col-md-8 col-lg-6 mt-3">
-              <p class="price mb-0"> <b>150.000đ</b><small class="text-secondary">/1kg</small>
+              <p class="price mb-0">
+                <b>150.000đ</b><small class="text-secondary">/1kg</small>
               </p>
               <button
                 type="button"
-                class="btn btn-primary btn-lg btn-block btn-hero border-0">
+                class="btn btn-primary btn-lg btn-block btn-hero border-0"
+              >
                 Đặt mua ngay
               </button>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-6 order-1 order-md-2 hero-img-container">
-          <div class="d-flex img-wrapper align-items-center justify-content-center">
+          <div
+            class="d-flex img-wrapper align-items-center justify-content-center"
+          >
             <FloatImg :img-obj="imgObj" />
-
           </div>
         </div>
       </div>
@@ -62,10 +72,10 @@ export default {
     handleScroll() {
       if (process.browser) {
         var y = window.pageYOffset
-        var h = Math.max(
-          document.documentElement.clientHeight,
-          window.innerHeight || 0
-        )
+        // var h = Math.max(
+        //   document.documentElement.clientHeight,
+        //   window.innerHeight || 0
+        // )
 
         this.imgObj.translateY = 0 - Math.round(y / 15)
       }

@@ -1,25 +1,34 @@
 <template>
   <section
     v-lazy:background-image="imgBgObj"
-    class="section section__light curve-both">
+    class="section section__light curve-both"
+  >
     <div class="container">
-      <h2 class="section__light__title text-center next-section">Tại sao Tỏi Phan Rang đặc biệt?</h2>
-      <p class="section__light__subtitle text-center">Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên tố vi lượng cao gấp
-      lần tỏi thường.</p>
+      <h2 class="section__light__title text-center next-section">
+        Tại sao Tỏi Phan Rang đặc biệt?
+      </h2>
+      <p class="section__light__subtitle text-center">
+        Chứa hàm lượng allicin, glucogen, aliin, fitonxit, vitamin và các nguyên
+        tố vi lượng cao gấp lần tỏi thường.
+      </p>
 
       <div class="col-12 p-0 mt-4 why-garlic ">
         <div class="grid_g">
           <div class="grid_g__item grid_g__m">
             <div class="img-container">
-              <div class="d-flex img-wrapper align-items-center justify-content-center">
-                <div class="d-inline-flex align-items-stretch img-wrapper__inner">
-                  <div
-                    v-scroll-reveal="reveal">
+              <div
+                class="d-flex img-wrapper align-items-center justify-content-center"
+              >
+                <div
+                  class="d-inline-flex align-items-stretch img-wrapper__inner"
+                >
+                  <div v-scroll-reveal="reveal">
                     <img
                       v-lazy="imgObj"
                       src="/images/lazyload/loading.svg"
                       class="img-fluid"
-                      alt="Siêu Tỏi Phan Rang">
+                      alt="Siêu Tỏi Phan Rang"
+                    />
                   </div>
                 </div>
               </div>
@@ -29,12 +38,14 @@
             v-for="(item, index) in items"
             :key="index"
             :class="getGridItemIndex(index)"
-            class="grid_g__item">
+            class="grid_g__item"
+          >
             <why-item
               :id="index"
               :title="item.title"
               :description="item.description"
-              :image="item.image" />
+              :image="item.image"
+            />
           </div>
         </div>
       </div>
@@ -43,12 +54,12 @@
 </template>
 
 <script>
+// import FloatImg from '../Public/FloatImg'
 import WhyItem from './WhyItem'
-import FloatImg from '../Public/FloatImg'
 
 export default {
   name: 'WhyGarlic',
-  components: { WhyItem, FloatImg },
+  components: { WhyItem },
   data() {
     return {
       reveal: {

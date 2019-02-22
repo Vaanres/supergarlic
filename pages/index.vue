@@ -1,9 +1,8 @@
 <template>
   <div>
-    <Hero/>
-    <WhyGarlic/>
+    <Hero />
+    <WhyGarlic />
   </div>
-
 </template>
 
 <script>

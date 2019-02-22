@@ -1,44 +1,56 @@
 <template>
   <div class="container">
     <div class="row no-gutters">
-      <div class="col-12 col-md-2 d-flex align-items-center justify-content-center justify-content-md-start"> 
-        <div class="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
-         
+      <div
+        class="col-12 col-md-2 d-flex align-items-center justify-content-center justify-content-md-start"
+      >
+        <div
+          class="mb-4 mb-md-0 d-flex align-items-center justify-content-center"
+        >
           <img
             class="logo mr-1"
             src="~assets/images/logo_dark.svg"
-            alt="Siêu tỏi logo"><b>SiêuTỏi</b>
+            alt="Siêu tỏi logo"
+          /><b>SiêuTỏi</b>
         </div>
       </div>
-      <div class="col-12 col-md-8 d-flex align-items-center justify-content-center"> 
+      <div
+        class="col-12 col-md-8 d-flex align-items-center justify-content-center"
+      >
         <div class="mb-4 mb-md-0">
-          <b-button 
+          <b-button
             v-for="(item, index) in links"
             :key="index"
-            :to="item.path" 
+            :to="item.path"
             variant="link"
-            class="footer-link"> {{ item.name }}
+            class="footer-link"
+          >
+            {{ item.name }}
           </b-button>
         </div>
       </div>
-      <div class="col-12  col-md-2 d-flex align-items-center justify-content-center justify-content-md-end">
+      <div
+        class="col-12  col-md-2 d-flex align-items-center justify-content-center justify-content-md-end"
+      >
         <div>
-          <a 
+          <a
             v-b-tooltip="tooltip"
             class="social-link"
             aria-label="Theo dõi Siêu Tỏi trên Facebook"
             title="Theo dõi Siêu Tỏi trên Facebook"
             target="_blank"
-            href="#">
+            href="#"
+          >
             <font-awesome-icon :icon="iconFacebook" />
           </a>
-          <a 
+          <a
             v-b-tooltip="tooltip"
             class="social-link"
             aria-label="Chat với Siêu Tỏi trên Facebook Messenger"
             title="Chat với Siêu Tỏi trên Facebook Messenger"
             target="_blank"
-            href="#">
+            href="#"
+          >
             <font-awesome-icon :icon="iconMessenger" />
           </a>
         </div>

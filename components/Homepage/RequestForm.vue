@@ -3,17 +3,17 @@
     <div class="block-buy">
       <div class="block-buy__wrapper">
         <div>
-          <img 
-            class="block-buy__logo" 
-            src="https://sketchapp.com/images/pages/home/52/logo@2x.png" 
+          <img
+            class="block-buy__logo"
+            src="https://sketchapp.com/images/pages/home/52/logo@2x.png"
             width="150"
-            alt="Sketch Logo">
+            alt="Sketch Logo"
+          />
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {

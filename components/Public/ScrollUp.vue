@@ -1,31 +1,25 @@
 <template>
   <div class="container-fluid">
     <div class="d-flex align-items-center justify-content-end ">
-      <transition 
+      <transition
         name="custom-classes-transition"
         enter-active-class="animated fadeInUp"
-        leave-active-class="animated fadeOutDown">
-        <div 
+        leave-active-class="animated fadeOutDown"
+      >
+        <div
           v-if="show"
           class="btn-scroll-up"
           @mouseover="buttonScrollUpMouseOver"
           @mouseleave="buttonScrollUpMouseOut"
-          @click="buttonScrollUpClicked">
-
-          <div 
-            :class="{animate:hover}"
-            class="btn-scroll-up__icon">
-            <font-awesome-icon
-              icon="arrow-up"
-              fixed-width/> 
+          @click="buttonScrollUpClicked"
+        >
+          <div :class="{ animate: hover }" class="btn-scroll-up__icon">
+            <font-awesome-icon icon="arrow-up" fixed-width />
           </div>
         </div>
       </transition>
-
     </div>
   </div>
-  
-  
 </template>
 
 <script>

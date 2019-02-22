@@ -1,4 +1,4 @@
-const pkg = require('./package')
+//const pkg = require('./package')
 const meta = require('./meta')
 
 module.exports = {
@@ -118,9 +118,20 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/vue-lazyload',
-    '~/plugins/font-awesome',
-    '~/plugins/bootstrap-vue'
+    // ssr: false to only include it on client-side
+    {
+      src: '~/plugins/bootstrap-vue.js'
+    },
+    {
+      src: '~/plugins/font-awesome.js'
+    },
+    {
+      src: '~/plugins/vue-lazyload.js'
+    },
+    {
+      src: '~/plugins/vue-scroll-reveal',
+      ssr: false
+    }
   ],
 
   /*
@@ -161,7 +172,10 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }
@@ -174,22 +188,7 @@ module.exports = {
     }
   },
   extractCSS: true,
-  plugins: [
-    // ssr: false to only include it on client-side
-    {
-      src: '~/plugins/bootstrap-vue.js'
-    },
-    {
-      src: '~/plugins/font-awesome.js'
-    },
-    {
-      src: '~/plugins/vue-lazyload.js'
-    },
-    {
-      src: '~/plugins/vue-scroll-reveal',
-      ssr: false
-    }
-  ],
+
   env: {
     site_name: `- ${meta.name}`,
     site_description: `- ${meta.description}`

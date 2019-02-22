@@ -1,25 +1,16 @@
 <template>
-  <b-navbar
-    toggleable="md"
-    variant="faded"
-    type="light"
-  >
+  <b-navbar toggleable="md" variant="faded" type="light">
     <div class="container">
-      <b-navbar-brand
-        href="/"
-        class="d-flex align-items-center">
+      <b-navbar-brand href="/" class="d-flex align-items-center">
         <img
           class="mr-1"
           src="~assets/images/logo_dark.svg"
-          alt="Siêu tỏi logo"><b>SiêuTỏi</b>
+          alt="Siêu tỏi logo"
+        /><b>SiêuTỏi</b>
       </b-navbar-brand>
 
-      <b-navbar-toggle
-        class="pr-0"
-        target="nav_collapse"/>
-      <b-collapse
-        id="nav_collapse"
-        is-nav>
+      <b-navbar-toggle class="pr-0" target="nav_collapse" />
+      <b-collapse id="nav_collapse" is-nav>
         <b-navbar-nav class="mr-auto">
           <b-nav-item
             v-for="(item, index) in links"
@@ -27,7 +18,8 @@
             :to="item.path"
             class="nav-link"
             active-class="active"
-            exact>
+            exact
+          >
             {{ item.name }}
           </b-nav-item>
         </b-navbar-nav>
@@ -37,25 +29,19 @@
           <li class="d-flex flex-column flex-lg-row">
             <a
               class="btn btn-navbar btn-light d-md-none d-lg-inline-block"
-              href="tel:0898120400" >
+              href="tel:0898120400"
+            >
               <!-- btn-navbar btn-call -->
-              <font-awesome-icon
-                icon="phone"
-                fixed-width/> 0898 120 400
+              <font-awesome-icon icon="phone" fixed-width /> 0898 120 400
             </a>
-            <button
-              type="button"
-              class="btn btn-primary btn-navbar">
+            <button type="button" class="btn btn-primary btn-navbar">
               Đặt mua ngay
             </button>
           </li>
         </b-navbar-nav>
       </b-collapse>
     </div>
-
   </b-navbar>
-
-
 </template>
 
 <script>

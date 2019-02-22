@@ -2,19 +2,17 @@
   <div class="wrapper">
     <div class="grid">
       <header class="grid__header">
-        <Navigator :links="links"/>
+        <Navigator :links="links" />
       </header>
       <section class="grid__main">
-        <nuxt/>
+        <nuxt />
       </section>
       <footer class="grid__footer">
-        <Footer :links="links"/>
+        <Footer :links="links" />
       </footer>
     </div>
-
   </div>
 </template>
-
 
 <script>
 import Navigator from '../components/Navigator'
@@ -49,7 +47,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="scss">
 @import '~assets/styles/main';

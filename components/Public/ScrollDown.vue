@@ -1,38 +1,39 @@
 <template>
   <div class="scroll-down__wrapper">
-    <transition 
+    <transition
       name="custom-classes-transition"
       enter-active-class="animated fadeInUp"
-      leave-active-class="animated fadeOutDown">
-      <div 
+      leave-active-class="animated fadeOutDown"
+    >
+      <div
         v-show="show"
-        :style="{opacity: opacity}"
+        :style="{ opacity: opacity }"
         class="scroll-down"
         @click="buttonScrollDownClicked"
         @mouseover="buttonScrollDownMouseOver"
-        @mouseleave="buttonScrollDownMouseOut">
-
+        @mouseleave="buttonScrollDownMouseOut"
+      >
         <div class="scroll-down__img-wrapper">
-          <img 
-            :class="{tada:hover, rubberBand:clicked}"
+          <img
+            :class="{ tada: hover, rubberBand: clicked }"
             class="mouse animated"
             src="/images/svg/icon_mouse.svg"
-            alt="scrolldown">
-          <img 
+            alt="scrolldown"
+          />
+          <img
             class="arrow"
             src="/images/svg/icon_arrow_down.svg"
-            alt="icon arrow down">
-          <img 
+            alt="icon arrow down"
+          />
+          <img
             class="arrow"
             src="/images/svg/icon_arrow_down.svg"
-            alt="icon arrow down">
+            alt="icon arrow down"
+          />
         </div>
       </div>
-
     </transition>
   </div>
-  
-
 </template>
 
 <script>
@@ -125,7 +126,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped >
+<style lang="scss" scoped>
 @import '~assets/styles/override';
 
 .scroll-down {
